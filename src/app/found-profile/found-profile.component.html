@@ -1,0 +1,39 @@
+
+<div class="profile w-100 vh-100 d-flex justify-content-center align-items-center">
+  <div class="container img-thumbnail p-5 shadow-lg">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="profile-img-containe text-center">
+          <img class=" img-thumbnail p-3 w-75 " src="../../assets/imgs/person.png" alt="">
+        </div>
+      </div>
+      <div class="col-md-8 d-flex align-items-center">
+        <ul>
+          <li><strong>Name : </strong>
+            <label ID="voterName">{{voter.fname||""+ " " + voter.pname||""}}</label></li>
+          <li><strong>N. ID : </strong>
+            <label ID="VoterID">{{voter.NID||""}}</label></li>
+          <li><strong>Age : </strong>
+            <label ID="voterAge">{{age||""}}</label></li>
+          <li><strong>Address : </strong>
+            <label ID="voterState">{{voter.state||"" + " / " + voter.city||""}}</label></li>
+          <li><strong>Gender : </strong>
+            <label ID="voterGender">{{voter.gender||""}}</label></li>
+        </ul>
+      </div>
+      <div class="col-md-12">
+        <div class="container w-50 pt-4 d-flex justify-content-around">
+          <button (click)="LaunchURLScript()" class="text-uppercase btn btn-success text-white" ID="ConfirmBtn"
+            *ngIf="searchCase == 'searchForVote'" routerLink="/authentication">Confirm</button>
+            <button class="text-uppercase btn text-white btn-danger" 
+            *ngIf="searchCase != 'searchForVote'" (click)="deleteVoter()" >Delete</button>
+          <button class="text-uppercase btn text-white btn-warning" 
+          *ngIf="searchCase != 'searchForVote'" routerLink="/editvoter" >Edit</button>
+
+          <button class="text-uppercase btn text-white btn-danger" ID="BackBtn" routerLink="/search">Back</button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

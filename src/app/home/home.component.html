@@ -1,0 +1,32 @@
+<app-navbar></app-navbar>
+<section id="home">
+  <div class="row">
+    <div class="col-lg-6 col-md-8 v">
+      <div class="left-side-container position-relative d-flex justify-content-center align-items-center">
+        <div class="home-content">
+          <h1 (click)="showToasterSuccess()"><i class="fas fa-fingerprint"></i> 2022 <i class="fas fa-fingerprint"></i></h1>
+          <h2 class="">Electronic Voting
+            Using Fingerprint</h2>
+          <button (click)="home()" routerLink="/search" class="text-uppercase btn text-white more-info-btn">
+            Vote Now
+          </button>
+        </div>
+      </div>
+      <!-- <div class="left-side position-absolute">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path fill="#074081" fill-opacity="1"
+            d="M0,128L60,154.7C120,181,240,235,360,224C480,213,600,139,720,138.7C840,139,960,213,1080,224C1200,235,1320,181,1380,154.7L1440,128L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z">
+          </path>
+        </svg>
+      </div> -->
+    </div>
+    <div class="col-lg-6 col-md-4 sec-col">
+      <div class="home-img d-flex justify-content-center align-items-center">
+
+        <img class="h-100 position-absolute" src="../../assets/imgs/election-in-egypt-the-hand-of-man-putting-his-vote-in-the-ballot-box-waved-egypt-flag-on-background-2AE91MX.png" alt="" srcset="" />
+      </div>
+    </div>
+  </div>
+
+</section>

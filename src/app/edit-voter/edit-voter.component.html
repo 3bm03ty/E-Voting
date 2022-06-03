@@ -1,0 +1,155 @@
+<app-admin-navbar></app-admin-navbar>
+
+<div style="height: 70px;"></div>
+
+<form [formGroup]='registerForm' #formDirective="ngForm"
+  (ngSubmit)="getRegisterInfo(registerForm.value, formDirective)">
+  <div class="m-auto py-2 ">
+
+    <div class="container m-auto row">
+      <div class="col-md-6">
+
+        <div class="row img-thumbnail my-2 shadow-lg">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>Name :</label>
+
+              <input formControlName="fname" class="form-control" ID="TxtName" placeholder="Name">
+              <!--<input type="text" class="form-control"> -->
+              <p *ngIf="registerForm.get('fname')?.errors != null && registerForm.get('fname')?.touched"
+                class="py-2 text-danger ">First Name inValid</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+
+            <div class="form-group">
+              <label>Parent Full Name :</label>
+
+              <input formControlName="lname" class="form-control" ID="TxtParentName" placeholder="Parent Full Name">
+              <!--<input type="text" class="form-control">-->
+              <p *ngIf="registerForm.get('lname')?.errors != null && registerForm.get('lname')?.touched"
+                class="py-2 text-danger ">Parent Full Name inValid</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row  my-2 img-thumbnail shadow1-lg">
+          <div class="form-group">
+            <label>National ID</label>
+            <input formControlName="NID" class="form-control" ID="TxtID" placeholder="National ID">
+            <!--<input type="text" class="form-control"> -->
+            <p *ngIf="registerForm.get('NID')?.errors != null && registerForm.get('NID')?.touched"
+              class="py-2 text-danger ">National ID inValid</p>
+          </div>
+        </div>
+
+
+        <div class="row my-2 img-thumbnail shadow2-lg">
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>City</label>
+              <!-- <select formControlName="state" class="form-control" size="1"   onchange="makeSubmenu(this.value)" ID="ddlCity">  -->
+              <select formControlName="state" class="form-control" size="1" ID="ddlCity">
+                <option [value]=null disabled>Choose State</option>
+                <option>Alexandria</option>
+                <option>Aswan</option>
+                <option>Asyut</option>
+                <option>Beheira</option>
+                <option>Beni Suef</option>
+                <option>Cairo</option>
+                <option>Dakahlia</option>
+                <option>Damietta</option>
+                <option>Faiyum</option>
+                <option>Gharbia</option>
+                <option>Giza</option>
+                <option>Ismailia</option>
+                <option>Kafr El Sheikh</option>
+                <option>Luxor</option>
+                <option>Matruh</option>
+                <option>Minya</option>
+                <option>Monufia</option>
+                <option>New Valley</option>
+                <option>North Sinai</option>
+                <option>Port Said</option>
+                <option>Qalyubia</option>
+                <option>Qena</option>
+                <option>Red Sea</option>
+                <option>Sharqia</option>
+                <option>Sohag</option>
+                <option>South Sinai</option>
+                <option>Suez</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="col-md-6">
+            <div class="form-group">
+              <label>State</label>
+
+              <select formControlName="city" class="form-control" ID="ddlState" size="1">
+                <option [value]=null disabled>Choose City</option>
+                <option>Belqas</option>
+                <option>Aga</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="img-thumbnail my-2 row shadow3-lg">
+          <div class="col-md-6">
+            <label>Status</label>
+            <div class="form-group">
+              <select formControlName="status" class="form-control" ID="ddlStatus">
+                <option [value]=null disabled>Single</option>
+                <option>Married</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+
+            <label>Gender</label>
+
+            <div class="form-group">
+              <select formControlName="gender" class="form-control" ID="ddlGender">
+                <option [value]=null disabled>Male</option>
+                <option>Female</option>
+              </select>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="row my-2 shadow4-lg img-thumbnail">
+          <div class="form-group">
+            <label for="birthday">Birthday:</label>
+            <input formControlName="birthday" class="form-control" ID="TxtBirthday" TextMode="Date">
+          </div>
+        </div>
+        <div class="row my-2 shadow4-lg img-thumbnail d-none">
+          <div class="form-group">
+            <label for="birthday">Birthday:</label>
+            <input formControlName="template" class="form-control" ID="TxtBirthday" TextMode="Date">
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <div>
+          <img class="img-fluid w-100" src="../../assets/imgs/animated fingerprint.gif" alt="">
+          <div class="d-flex justify-content-evenly mt-5">
+            <button type="button" (click)="getFingerprint()" class="btn ok-btn">Upload</button>
+            <button type="button" class="btn delete-btn">Delete</button>
+            <button routerLink="/admincontrol" type="button" class="btn delete-btn">Back</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- <button onclick="displaySelected()">show selected</button> -->
+      <button class="btn btn-mine m-auto text-white w-75 mt-3" ID="RegisterBtn" type="submit">Add
+        Voter</button>
+
+    </div>
+  </div>
+
+</form>

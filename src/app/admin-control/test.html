@@ -1,0 +1,129 @@
+<div _ngcontent-c3="" class="container">
+    <div _ngcontent-c3="" class="row align-content-center">
+      <div _ngcontent-c3="" class="col align-items-center text-center mt-5 mb-5">
+        <!---->
+        <!----><a _ngcontent-c3="" class="pointer ng-star-inserted" href="/dashboard"><img _ngcontent-c3="" alt="Election Runner" class="img-fluid" src="/assets/images/logo-blue-400.png"></a>
+
+      </div>
+    </div>
+    
+
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-10 col-lg-8">
+
+        <div class="text-center">
+          <h1 class="display-4 mb-4">Create an Election</h1>
+        </div>
+
+        <div class="card">
+          <div class="card-body">
+            <form class="validate-on-submit ng-touched ng-dirty ng-valid was-validated" novalidate="">
+
+              <!----><app-form-validation-errors class="ng-star-inserted">
+  <div class="alert alert-danger form-validation-errors">
+    <span>There was a problem with this request. Please make sure that you are connected to the internet and try again.</span>
+    <!---->
+  </div>
+</app-form-validation-errors>
+
+              <div class="form-group">
+                <label appformlabeldangericon="" for="title">Title<i class="danger-icon icon-attention"></i></label>
+                <input appfocusme="" class="form-control form-control-lg title-input ng-touched ng-dirty ng-valid" formcontrolname="title" name="title" placeholder="e.g. Homecoming Court, Board of Directors" required="" type="text">
+                       <div class="invalid-feedback">The election title must be between 2 and 200 characters</div>
+
+
+              </div>
+
+              <app-election-start-end-dates>
+  <!---->
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="form-group">
+          <label appformlabeldangericon="" for="start_date">Start Date<i class="danger-icon icon-attention"></i></label>
+          <!---->
+            <!---->
+            <!----><!---->
+              <app-flat-pickr formcontrolname="start_date" class="ng-untouched ng-valid ng-star-inserted ng-dirty">
+  <input type="hidden">
+  <div class="flatpickr-input-container">
+    <i class="icon-calendar"></i>
+    <input class="form-control flatpickr-input" data-input="" type="hidden" placeholder="" value="2022-06-01 13:00:0"><input class="form-control flatpickr-input input" placeholder="" type="text" readonly="readonly">
+  </div></app-flat-pickr>
+            
+          
+        </div>
+      </div>
+      <div class="col-12 col-md-6">
+        <div class="form-group">
+          <label appformlabeldangericon="" for="end_date">End Date<i class="danger-icon icon-attention"></i></label>
+          <!---->
+            <!---->
+            <!----><!---->
+              <app-flat-pickr formcontrolname="end_date" class="ng-untouched ng-pristine ng-valid ng-star-inserted">
+  <input type="hidden">
+  <div class="flatpickr-input-container">
+    <i class="icon-calendar"></i>
+    <input class="form-control flatpickr-input" data-input="" type="hidden" placeholder="" value="2022-06-11 12:00:0"><input class="form-control flatpickr-input input" placeholder="" type="text" readonly="readonly">
+  </div></app-flat-pickr>
+            
+          
+          <!---->
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <app-timezone-selector>
+  <!---->
+    <div class="row">
+      <div class="col">
+        <div class="form-group">
+          <label for="timezone">Timezone</label>
+          <select class="form-control ng-pristine ng-valid ng-touched" formcontrolname="timezone" id="timezone" name="timezone">
+            <!----><optgroup label="United States" class="ng-star-inserted">
+              <!----><option value="US/Samoa" class="ng-star-inserted">(GMT-11:00) US/Samoa</option><option value="US/Hawaii" class="ng-star-inserted">(GMT-10:00) US/Hawaii</option><option value="US/Alaska" class="ng-star-inserted">(GMT-08:00) US/Alaska</option><option value="US/Arizona" class="ng-star-inserted">(GMT-07:00) US/Arizona</option><option value="US/Pacific" class="ng-star-inserted">(GMT-07:00) US/Pacific</option><option value="US/Mountain" class="ng-star-inserted">(GMT-06:00) US/Mountain</option><option value="US/Central" class="ng-star-inserted">(GMT-05:00) US/Central</option><option value="US/East-Indiana" class="ng-star-inserted">(GMT-04:00) US/East-Indiana</option><option value="US/Eastern" class="ng-star-inserted">(GMT-04:00) US/Eastern</option>
+            </optgroup><optgroup label="America" class="ng-star-inserted">
+              <!----><option value="America/Adak" class="ng-star-inserted">(GMT-09:00) America/Adak</option><option value="America/Anchorage" class="ng-star-inserted">(GMT-08:00) America/Anchorage</option><option value="America/Metlakatla" class="ng-star-inserted">(GMT-08:00) America/Metlakatla</option><option value="America/Fort_Nelson" class="ng-star-inserted">(GMT-07:00) America/Fort_Nelson</option><option value="America/Los_Angeles" class="ng-star-inserted">(GMT-07:00) America/Los_Angeles</option><option value="America/Phoenix" class="ng-star-inserted">(GMT-07:00) America/Phoenix</option><option value="America/Chihuahua" class="ng-star-inserted">(GMT-06:00) America/Chihuahua</option><option value="America/Denver" class="ng-star-inserted">(GMT-06:00) America/Denver</option><option value="America/Managua" class="ng-star-inserted">(GMT-06:00) America/Managua</option><option value="America/Cancun" class="ng-star-inserted">(GMT-05:00) America/Cancun</option><option value="America/Chicago" class="ng-star-inserted">(GMT-05:00) America/Chicago</option><option value="America/Lima" class="ng-star-inserted">(GMT-05:00) America/Lima</option><option value="America/Mexico_City" class="ng-star-inserted">(GMT-05:00) America/Mexico_City</option><option value="America/Panama" class="ng-star-inserted">(GMT-05:00) America/Panama</option><option value="America/Asuncion" class="ng-star-inserted">(GMT-04:00) America/Asuncion</option><option value="America/Campo_Grande" class="ng-star-inserted">(GMT-04:00) America/Campo_Grande</option><option value="America/Caracas" class="ng-star-inserted">(GMT-04:00) America/Caracas</option><option value="America/Grand_Turk" class="ng-star-inserted">(GMT-04:00) America/Grand_Turk</option><option value="America/Havana" class="ng-star-inserted">(GMT-04:00) America/Havana</option><option value="America/La_Paz" class="ng-star-inserted">(GMT-04:00) America/La_Paz</option><option value="America/New_York" class="ng-star-inserted">(GMT-04:00) America/New_York</option><option value="America/Port-au-Prince" class="ng-star-inserted">(GMT-04:00) America/Port-au-Prince</option><option value="America/Santiago" class="ng-star-inserted">(GMT-04:00) America/Santiago</option><option value="America/Santo_Domingo" class="ng-star-inserted">(GMT-04:00) America/Santo_Domingo</option><option value="America/Fortaleza" class="ng-star-inserted">(GMT-03:00) America/Fortaleza</option><option value="America/Halifax" class="ng-star-inserted">(GMT-03:00) America/Halifax</option><option value="America/Montevideo" class="ng-star-inserted">(GMT-03:00) America/Montevideo</option><option value="America/Sao_Paulo" class="ng-star-inserted">(GMT-03:00) America/Sao_Paulo</option><option value="America/St_Johns" class="ng-star-inserted">(GMT-02:30) America/St_Johns</option><option value="America/Godthab" class="ng-star-inserted">(GMT-02:00) America/Godthab</option><option value="America/Miquelon" class="ng-star-inserted">(GMT-02:00) America/Miquelon</option><option value="America/Noronha" class="ng-star-inserted">(GMT-02:00) America/Noronha</option>
+            </optgroup><optgroup label="Europe" class="ng-star-inserted">
+              <!----><option value="Europe/Dublin" class="ng-star-inserted">(GMT+01:00) Europe/Dublin</option><option value="Europe/Lisbon" class="ng-star-inserted">(GMT+01:00) Europe/Lisbon</option><option value="Europe/London" class="ng-star-inserted">(GMT+01:00) Europe/London</option><option value="Europe/Paris" class="ng-star-inserted">(GMT+02:00) Europe/Paris</option><option value="Europe/Athens" class="ng-star-inserted">(GMT+03:00) Europe/Athens</option><option value="Europe/Chisinau" class="ng-star-inserted">(GMT+03:00) Europe/Chisinau</option><option value="Europe/Istanbul" class="ng-star-inserted">(GMT+03:00) Europe/Istanbul</option><option value="Europe/Moscow" class="ng-star-inserted">(GMT+03:00) Europe/Moscow</option><option value="Europe/Saratov" class="ng-star-inserted">(GMT+04:00) Europe/Saratov</option><option value="Europe/Ulyanovsk" class="ng-star-inserted">(GMT+04:00) Europe/Ulyanovsk</option><option value="Europe/Volgograd" class="ng-star-inserted">(GMT+04:00) Europe/Volgograd</option>
+            </optgroup><optgroup label="Australia" class="ng-star-inserted">
+              <!----><option value="Australia/Perth" class="ng-star-inserted">(GMT+08:00) Australia/Perth</option><option value="Australia/Eucla" class="ng-star-inserted">(GMT+08:45) Australia/Eucla</option><option value="Australia/Adelaide" class="ng-star-inserted">(GMT+09:30) Australia/Adelaide</option><option value="Australia/Darwin" class="ng-star-inserted">(GMT+09:30) Australia/Darwin</option><option value="Australia/Brisbane" class="ng-star-inserted">(GMT+10:00) Australia/Brisbane</option><option value="Australia/Sydney" class="ng-star-inserted">(GMT+10:00) Australia/Sydney</option><option value="Australia/Lord_Howe" class="ng-star-inserted">(GMT+10:30) Australia/Lord_Howe</option>
+            </optgroup><optgroup label="Asia" class="ng-star-inserted">
+              <!----><option value="Asia/Amman" class="ng-star-inserted">(GMT+03:00) Asia/Amman</option><option value="Asia/Baghdad" class="ng-star-inserted">(GMT+03:00) Asia/Baghdad</option><option value="Asia/Beirut" class="ng-star-inserted">(GMT+03:00) Asia/Beirut</option><option value="Asia/Damascus" class="ng-star-inserted">(GMT+03:00) Asia/Damascus</option><option value="Asia/Famagusta" class="ng-star-inserted">(GMT+03:00) Asia/Famagusta</option><option value="Asia/Gaza" class="ng-star-inserted">(GMT+03:00) Asia/Gaza</option><option value="Asia/Jerusalem" class="ng-star-inserted">(GMT+03:00) Asia/Jerusalem</option><option value="Asia/Baku" class="ng-star-inserted">(GMT+04:00) Asia/Baku</option><option value="Asia/Dubai" class="ng-star-inserted">(GMT+04:00) Asia/Dubai</option><option value="Asia/Kabul" class="ng-star-inserted">(GMT+04:30) Asia/Kabul</option><option value="Asia/Tehran" class="ng-star-inserted">(GMT+04:30) Asia/Tehran</option><option value="Asia/Karachi" class="ng-star-inserted">(GMT+05:00) Asia/Karachi</option><option value="Asia/Qyzylorda" class="ng-star-inserted">(GMT+05:00) Asia/Qyzylorda</option><option value="Asia/Tashkent" class="ng-star-inserted">(GMT+05:00) Asia/Tashkent</option><option value="Asia/Colombo" class="ng-star-inserted">(GMT+05:30) Asia/Colombo</option><option value="Asia/Kolkata" class="ng-star-inserted">(GMT+05:30) Asia/Kolkata</option><option value="Asia/Kathmandu" class="ng-star-inserted">(GMT+05:45) Asia/Kathmandu</option><option value="Asia/Dhaka" class="ng-star-inserted">(GMT+06:00) Asia/Dhaka</option><option value="Asia/Rangoon" class="ng-star-inserted">(GMT+06:30) Asia/Rangoon</option><option value="Asia/Bangkok" class="ng-star-inserted">(GMT+07:00) Asia/Bangkok</option><option value="Asia/Barnaul" class="ng-star-inserted">(GMT+07:00) Asia/Barnaul</option><option value="Asia/Hovd" class="ng-star-inserted">(GMT+07:00) Asia/Hovd</option><option value="Asia/Jakarta" class="ng-star-inserted">(GMT+07:00) Asia/Jakarta</option><option value="Asia/Novosibirsk" class="ng-star-inserted">(GMT+07:00) Asia/Novosibirsk</option><option value="Asia/Tomsk" class="ng-star-inserted">(GMT+07:00) Asia/Tomsk</option><option value="Asia/Hong_Kong" class="ng-star-inserted">(GMT+08:00) Asia/Hong_Kong</option><option value="Asia/Kuala_Lumpur" class="ng-star-inserted">(GMT+08:00) Asia/Kuala_Lumpur</option><option value="Asia/Makassar" class="ng-star-inserted">(GMT+08:00) Asia/Makassar</option><option value="Asia/Manila" class="ng-star-inserted">(GMT+08:00) Asia/Manila</option><option value="Asia/Shanghai" class="ng-star-inserted">(GMT+08:00) Asia/Shanghai</option><option value="Asia/Ulaanbaatar" class="ng-star-inserted">(GMT+08:00) Asia/Ulaanbaatar</option><option value="Asia/Chita" class="ng-star-inserted">(GMT+09:00) Asia/Chita</option><option value="Asia/Jayapura" class="ng-star-inserted">(GMT+09:00) Asia/Jayapura</option><option value="Asia/Pyongyang" class="ng-star-inserted">(GMT+09:00) Asia/Pyongyang</option><option value="Asia/Seoul" class="ng-star-inserted">(GMT+09:00) Asia/Seoul</option><option value="Asia/Tokyo" class="ng-star-inserted">(GMT+09:00) Asia/Tokyo</option><option value="Asia/Yakutsk" class="ng-star-inserted">(GMT+09:00) Asia/Yakutsk</option><option value="Asia/Vladivostok" class="ng-star-inserted">(GMT+10:00) Asia/Vladivostok</option><option value="Asia/Magadan" class="ng-star-inserted">(GMT+11:00) Asia/Magadan</option><option value="Asia/Sakhalin" class="ng-star-inserted">(GMT+11:00) Asia/Sakhalin</option><option value="Asia/Kamchatka" class="ng-star-inserted">(GMT+12:00) Asia/Kamchatka</option>
+            </optgroup><optgroup label="Africa" class="ng-star-inserted">
+              <!----><option value="Africa/Abidjan" class="ng-star-inserted">(GMT+0:00) Africa/Abidjan</option><option value="Africa/Sao_Tome" class="ng-star-inserted">(GMT+0:00) Africa/Sao_Tome</option><option value="Africa/Algiers" class="ng-star-inserted">(GMT+01:00) Africa/Algiers</option><option value="Africa/Casablanca" class="ng-star-inserted">(GMT+01:00) Africa/Casablanca</option><option value="Africa/Lagos" class="ng-star-inserted">(GMT+01:00) Africa/Lagos</option><option value="Africa/Cairo" class="ng-star-inserted">(GMT+02:00) Africa/Cairo</option><option value="Africa/Johannesburg" class="ng-star-inserted">(GMT+02:00) Africa/Johannesburg</option><option value="Africa/Khartoum" class="ng-star-inserted">(GMT+02:00) Africa/Khartoum</option><option value="Africa/Maputo" class="ng-star-inserted">(GMT+02:00) Africa/Maputo</option><option value="Africa/Windhoek" class="ng-star-inserted">(GMT+02:00) Africa/Windhoek</option><option value="Africa/Nairobi" class="ng-star-inserted">(GMT+03:00) Africa/Nairobi</option>
+            </optgroup><optgroup label="Antarctica" class="ng-star-inserted">
+              <!----><option value="Antarctica/Palmer" class="ng-star-inserted">(GMT-03:00) Antarctica/Palmer</option><option value="Antarctica/Troll" class="ng-star-inserted">(GMT+02:00) Antarctica/Troll</option><option value="Antarctica/Casey" class="ng-star-inserted">(GMT+08:00) Antarctica/Casey</option>
+            </optgroup><optgroup label="Pacific" class="ng-star-inserted">
+              <!----><option value="Pacific/Niue" class="ng-star-inserted">(GMT-11:00) Pacific/Niue</option><option value="Pacific/Pago_Pago" class="ng-star-inserted">(GMT-11:00) Pacific/Pago_Pago</option><option value="Pacific/Honolulu" class="ng-star-inserted">(GMT-10:00) Pacific/Honolulu</option><option value="Pacific/Tahiti" class="ng-star-inserted">(GMT-10:00) Pacific/Tahiti</option><option value="Pacific/Marquesas" class="ng-star-inserted">(GMT-09:30) Pacific/Marquesas</option><option value="Pacific/Gambier" class="ng-star-inserted">(GMT-09:00) Pacific/Gambier</option><option value="Pacific/Pitcairn" class="ng-star-inserted">(GMT-08:00) Pacific/Pitcairn</option><option value="Pacific/Easter" class="ng-star-inserted">(GMT-06:00) Pacific/Easter</option><option value="Pacific/Galapagos" class="ng-star-inserted">(GMT-06:00) Pacific/Galapagos</option><option value="Pacific/Guam" class="ng-star-inserted">(GMT+10:00) Pacific/Guam</option><option value="Pacific/Bougainville" class="ng-star-inserted">(GMT+11:00) Pacific/Bougainville</option><option value="Pacific/Norfolk" class="ng-star-inserted">(GMT+11:00) Pacific/Norfolk</option><option value="Pacific/Auckland" class="ng-star-inserted">(GMT+12:00) Pacific/Auckland</option><option value="Pacific/Fiji" class="ng-star-inserted">(GMT+12:00) Pacific/Fiji</option><option value="Pacific/Chatham" class="ng-star-inserted">(GMT+12:45) Pacific/Chatham</option><option value="Pacific/Apia" class="ng-star-inserted">(GMT+13:00) Pacific/Apia</option><option value="Pacific/Fakaofo" class="ng-star-inserted">(GMT+13:00) Pacific/Fakaofo</option><option value="Pacific/Tongatapu" class="ng-star-inserted">(GMT+13:00) Pacific/Tongatapu</option><option value="Pacific/Kiritimati" class="ng-star-inserted">(GMT+14:00) Pacific/Kiritimati</option>
+            </optgroup><optgroup label="Atlantic" class="ng-star-inserted">
+              <!----><option value="Atlantic/Cape_Verde" class="ng-star-inserted">(GMT-01:00) Atlantic/Cape_Verde</option><option value="Atlantic/Azores" class="ng-star-inserted">(GMT+0:00) Atlantic/Azores</option>
+            </optgroup><optgroup label="Other" class="ng-star-inserted">
+              <!----><option value="Etc/GMT+12" class="ng-star-inserted">(GMT-12:00) Etc/GMT+12</option><option value="Etc/GMT+7" class="ng-star-inserted">(GMT-07:00) Etc/GMT+7</option><option value="Etc/UCT" class="ng-star-inserted">(GMT+0:00) Etc/UCT</option><option value="Etc/GMT-1" class="ng-star-inserted">(GMT+01:00) Etc/GMT-1</option><option value="Etc/GMT-2" class="ng-star-inserted">(GMT+02:00) Etc/GMT-2</option><option value="MET" class="ng-star-inserted">(GMT+02:00) MET</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+    </div>
+  
+</app-timezone-selector>
+      </div>
+    </div>
+  
+
+</app-election-start-end-dates>
+
+              <button class="btn btn-success btn-lg ladda-button" type="submit" data-style="zoom-in"><span class="ladda-label">
+                Continue <i class="icon-angle-circled-right"></i>
+              </span><span class="ladda-spinner"></span><div class="ladda-progress" style="width: 0px;"></div></button>
+
+
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  
+  </div>

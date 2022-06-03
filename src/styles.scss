@@ -1,1 +1,223 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
+.main-color{
+    color: #D32220 !important;
+}
+
+#home{
+    min-height: 100vh;
+    overflow: hidden;
+    /* background-color: #074081; */
+}
+
+nav{
+    background-color: #074081;
+    // background-color: #052c58;
+    position: fixed !important;
+    z-index: 1000;
+    width: 100%;
+}
+
+.nav-link{
+    color: #ffffff !important;
+}
+
+
+#home h1{
+    color: white;
+    font-size: 75px;
+    font-family:'Times New Roman', Times, serif;
+}
+
+#home h1 i{
+    color: #D32220;
+    font-size: 64px;
+}
+.icon-color{
+    color: #D32220;
+}
+
+#home h2{
+    font-size: 70px;
+    color: white;
+    padding-bottom: 30px;
+    font-family:'Times New Roman', Times, serif;
+
+}
+
+#home .more-info-btn{
+    padding: 10px 20px;
+    background-color: #D32220;
+    font-size: 20px;
+    position: relative;
+    top: -10%;
+}
+
+
+
+.btn-mine {
+    background-color: #074081;
+    color: #fff;
+}
+
+.btn-outline-mine {
+    color: #24baef;
+    border: solid 1px #24baef;
+}
+
+
+#home .home-content {
+    // margin-left: -50px;
+    margin-top: 50px;
+    padding-left: 30px;
+}
+
+#home svg{
+    width: 1036px;
+}
+
+#home .left-side-container{
+    min-height: 100vh;
+    background-image: url("assets/imgs/Capture.PNG");
+    background-position: center center;
+    background-size: 100% 100%;
+    z-index: 1;
+}
+#home .row .col-lg-6.v{
+    padding-right:0!important;
+}
+@media screen and (max-width:1200px) {
+    #home .home-content h2{
+        width: 90%;
+    }
+}
+
+@media screen and (max-width:767px) {
+    #home .left-side-container{
+        background-image: none;
+        // align-items: flex-start !important;
+        background-color: #074081;
+    }
+    #home .sec-col{
+        display: none;
+    }
+    #home .home-content{
+        margin-top: 0;
+        text-align: center;
+        padding-left: 0;
+    }
+    #home .more-info-btn{
+        position: static;
+    }
+    nav{
+        position: fixed !important;
+        z-index: 10000;
+        width: 100%;
+    }
+}
+
+
+// #home .left-side{
+//     left: 0px;
+//     top: 100px;
+//     /* display: inline-block; */
+//     transform: rotate(90deg) translateY(-110%);
+//     z-index: 1;
+// }
+
+
+#home .navbar li a:hover{
+    color: #D32220 !important;
+}
+
+#home .home-img img{
+    text-align: center;
+    width: 130%;
+    // padding-left: 50px;
+}
+
+#home .home-img{
+    // background-color: #E4F7FF;
+    height: 100%;
+    // overflow: hidden;
+    position: relative;
+}
+
+#home .sec-col{
+    // background-color: #E4F7FF;
+}
+
+nav li a{
+    font-size: 18px;
+}
+
+nav li input{
+    background-color: transparent !important;
+    border-radius: 50px !important;
+    border-color: #ffffff !important;
+}
+
+.has-search .form-control-feedback {
+    position: absolute;
+    z-index: 2;
+    display: block;
+    width: 2.375rem;
+    height: 2.375rem;
+    line-height: 2.375rem;
+    text-align: right;
+    pointer-events: none;
+    color: #aaa;
+    right: 10%;
+    color: #D32220;
+}
+
+
+
+
+.identificationBtns{
+    height: fit-content;
+}
+
+.ok-btn{
+    padding: 0px 20px;
+    background-color: #4bb543;
+    font-size: 20px;
+    color: white;
+}
+
+.ok-btn:hover{
+    color: white;
+}
+.delete-btn{
+    padding: 0px 20px;
+    background-color: #C70000;
+    font-size: 20px;
+    color: white;
+}
+
+.delete-btn:hover{
+    color: white;
+}
+
+.navbar-brand{
+    font-size: 30px;
+    color: white !important;
+}
+.form-group{
+    margin: 10px 0;
+}
+.elected-item2 {
+    cursor: pointer;
+}
+
+.elected-item1 :hover {
+    background-color: #8aeb89 !important;
+    
+}
+.swal2-cancel{
+    margin-right: 10px;
+  }
+
+@import '~ngx-toastr/toastr.css';

@@ -1,0 +1,33 @@
+<div class="search vh-100 d-flex justify-content-center align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <ul>
+          <li>14 digit on the face of your ID</li>
+        </ul>
+        <div class="img-container">
+          <img class="w-75" src="../../assets/imgs/verifave-egyptian-national-id-verification.png" alt="" srcset="">
+        </div>
+      </div>
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <div class="w-100 img-thumbnail shadow-lg p-4">
+          <form [formGroup]="searchForm" (ngSubmit)="searchSubmit(searchForm)">
+            <p>Insert national ID</p>
+            <input formControlName="TxtID" class="form-control" ID="TxtID" placeholder="29006141400948">
+            <div id="alert" class="alert alert-danger mt-2 m-0 d-none">
+              Errorrrrr
+            </div>
+            <div class="container w-50 pt-4 d-flex justify-content-around">
+              <button type="submit" class="text-uppercase btn btn-success text-white" ID="SearchBtn">Search</button>
+              <!-- routerLink="/foundprofile" -->
+              <button *ngIf="route != 'adminControl'" class="text-uppercase btn text-white btn-danger"
+                routerLink="/home">Back</button>
+              <button *ngIf="route == 'adminControl'" class="text-uppercase btn text-white btn-danger"
+                routerLink="/admincontrol">Back</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

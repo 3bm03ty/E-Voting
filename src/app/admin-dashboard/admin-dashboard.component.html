@@ -1,0 +1,126 @@
+
+
+<app-admin-navbar></app-admin-navbar>
+<div class="col-md-4">
+  <div class="card" style="width: 18rem;">
+    <img src="../../assets/imgs/create-election.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">Create Election</h5>
+      <p class="card-text"> Create an election for your school or organization in seconds.<br>You can create your election from here</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div>
+<div title="Account Settings">
+  <div class="page-header-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col">
+          <div class="page-header d-flex align-items-center">
+            <h1>Account Settings</h1>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div style="color: black !important;" class="container ">
+  <!---->
+
+  <div class="row">
+    <div class="col-12 col-lg-3 col-xl-2">
+      <div class="nav-pills-responsive-wrapper">
+        <ul class="nav flex-column nav-pills nav-secondary nav-pills-responsive">
+          <li class="nav-item">
+            <a class="nav-link active" href="/account/settings/general"><i class="icon-cog"></i>
+              General</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/account/settings/organization"><i class="icon-organization"></i> Organization</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/account/settings/appearance"><i class="icon-brush-1"></i> Appearance</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/account/settings/app"><i class="icon-mobile"></i>
+              Mobile App</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/account/settings/billing"><i class="icon-credit-card"></i> Billing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/account/settings/security"><i class="icon-key"></i>
+              Security</a>
+          </li>
+        </ul>
+        <a class="toggle-icons pointer">
+          <i class="icon-down-open"></i>
+          <i class="icon-up-open"></i>
+        </a>
+      </div>
+    </div>
+    <div class="col">
+      <!-- <router-outlet></router-outlet> -->
+      <div class="ng-star-inserted">
+        <div class="row">
+          <div class="col">
+
+            <form novalidate="" class="ng-untouched ng-pristine ng-valid">
+              <div class="card card-gray">
+                <h4 class="card-header"><i class="icon-user"></i> Profile Settings</h4>
+                <div class="card-body">
+
+                  <div>
+                    <!---->
+
+                  </div>
+
+                  <!---->
+
+                  <div class="row">
+                    <div class="col-12 col-lg-10 col-xl-8">
+                      <div class="form-group">
+                        <label for="organization">Name</label>
+                        <p class="form-help">Your name or the name of the primary contact of the account. Visit the <a
+                            href="/account/settings/organization">organization
+                            settings</a> to change the name of the organization.</p>
+                        <input class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="name" name="name"
+                          type="text">
+                      </div>
+
+                      <div class="form-group">
+                        <label for="organization">Email Address</label>
+                        <input class="form-control ng-untouched ng-pristine ng-valid" formcontrolname="email"
+                          name="email" type="email">
+                      </div>
+
+                      <!---->
+                    </div>
+                  </div>
+
+
+
+                  <button class="btn btn-success ladda-button" type="submit" data-style="zoom-in"><span
+                      class="ladda-label">Save Settings
+                    </span><span class="ladda-spinner"></span></button>
+
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-auto ml-auto">
+                  <button class="btn btn-link btn-link-danger btn-sm" type="button">Close Account</button>
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+</div>
