@@ -1,0 +1,78 @@
+// https://moproject.herokuapp.com/voters/excel          //Post for Upload excel sheet for Voters
+// https://moproject.herokuapp.com/candidates/excel      //Post for Upload excel sheet for Candidates
+// 
+// https://moproject.herokuapp.com/matching/             //get and post Matching String
+// https://moproject.herokuapp.com/templates             //get and post Template String
+// 
+// https://moproject.herokuapp.com/votes/data            //get candidate voters data by candidate _id
+// {
+//   "CID":"629860c1b71e05fa7aef5056"
+// }
+// https://moproject.herokuapp.com/votes/count            //get Number of votes
+// {
+//   "CID":"629860c1b71e05fa7aef5056"
+// }
+// https://moproject.herokuapp.com/votes/time            //get votes time
+// {
+//   "CID":"629860c1b71e05fa7aef5056"
+// }
+// https://moproject.herokuapp.com/votes                //get votes for each Candidate
+// https://moproject.herokuapp.com/votes                //to Vote for Candidate
+// {
+//   "CID":"629860c1b71e05fa7aef5056",
+//   "VID":"62986176b72d1c7b6a67db89"
+// }
+// 
+// 
+// https://moproject.herokuapp.com/voters/29900121251656              //Get Voter Data
+// https://moproject.herokuapp.com/voters/                            //PUT & POST Voter
+// https://moproject.herokuapp.com/voters/656216547565f65454y54621e   //Update Voter by _id
+// 
+// 
+// https://moproject.herokuapp.com/candidates                            //Get All Candidates && Put & Post
+// https://moproject.herokuapp.com/candidates/12345678912341             //Get Candidate By NID
+// 
+// 
+// https://moproject.herokuapp.com/votes  
+// 
+// https://routeegypt.com/pinkboatIMG/                                //POST To Upload img
+// Form data  Key :file and get img https://routeegypt.com/pinkboatIMG/uploads/${imgName}
+// 
+// 
+// https://moproject.herokuapp.com/users/
+// {
+//   "NID":"12345678912345",
+//   "fname":"Ahmed Salah",
+//   "lname":"Abd Al-Muti",
+//   "city":"Cairo",
+//   "state":"single",
+//   "gender":"male",
+//   "birthday":"12-5-1997",
+//   "template":"sfhasdklfhasdklh"
+// }
+// https://moproject.herokuapp.com/users/ ====>POST
+// https://moproject.herokuapp.com/users/234567===> GET
+// https://moproject.herokuapp.com/users/===>DELETE
+// https://moproject.herokuapp.com/users/ ======> PUT
+// https://moproject.herokuapp.com/templates
+
+
+
+{
+ "first_name":"Admin1",
+ "last_name":"Ali",
+ "email":"admin1@MTI.com",
+ "password":"Admin1@123"
+}
+{
+ "first_name":"Admin2",
+ "last_name":"Ali",
+ "email":"admin2@MTI.com",
+ "password":"Admin2@123"
+}
+{
+ "first_name":"Admin3",
+ "last_name":"",
+ "email":"admin3@MTI.com",
+ "password":"Admin3@123"
+}

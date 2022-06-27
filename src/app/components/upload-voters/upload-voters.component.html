@@ -1,0 +1,50 @@
+<div class="search vh-100 d-flex justify-content-center align-items-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <ul>
+          <li>14 digit on the face of your ID</li>
+        </ul>
+        <div class="img-container">
+          <img class="w-75" src="../../assets/imgs/verifave-egyptian-national-id-verification1.png" alt="" srcset="">
+        </div>
+      </div>
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+        <div class="w-100 img-thumbnail shadow-lg p-4">
+          <form [formGroup]="voterExcel" (ngSubmit)="onUpload()">
+            <p>Insert national ID</p>
+            <input (change)="onChange($event)" type="file" accept=".xlsx" formControlName="ExcelFile"
+              class="form-control" ID="TxtID" placeholder="29006141400948">
+            <div id="alert" class="alert alert-danger mt-2 m-0 d-none">
+              Errorrrrr
+            </div>
+            <div class="container w-50 pt-4 d-flex justify-content-around">
+              <button [disabled]="inSearch" type="submit" class="btn btn-success text-white" ID="SearchBtn"><span
+                  *ngIf="!inSearch == true">import</span> <span *ngIf="inSearch">import <i
+                    class="fa-solid fa-spinner fa-spin-pulse"></i></span></button>
+              <!-- routerLink="/foundprofile" -->
+              <!-- <button [disabled]="inSearch" *ngIf="route != 'adminControl'"
+                class="text-uppercase btn text-white btn-danger" routerLink="/home">Back</button>
+              <button [disabled]="inSearch" *ngIf="route == 'adminControl'"
+                class="text-uppercase btn text-white btn-danger" routerLink="/admincontrol">Back</button>
+             -->
+            </div>
+          </form>
+          <!-- Shareable short link of  uoloaded file -->
+          <!-- <div class="container text-center jumbotron" *ngIf="shortLink">
+            <h2> Visit Here</h2>
+            <a href="{{shortLink}}">{{shortLink}}</a>
+          </div> -->
+
+          <!--Flag variable is used here-->
+          <div class="container text-center" *ngIf="loading">
+            <!-- <h3>Loading ...</h3> -->
+            <circle-progress [percent]="100" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="8"
+              [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'" [animation]="true"
+              [animationDuration]="600"></circle-progress>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

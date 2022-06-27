@@ -1,0 +1,97 @@
+.nav-link {
+  color: #000 !important;
+}
+
+.collapse .nav-link {
+  color: #fff !important;
+}
+
+.nav-tabs .nav-link.active {
+  color: #fff !important;
+  background-color: #074081;
+}
+
+.nav-tabs {
+  border-bottom: none;
+}
+
+.head {
+  background-color: #0BACFA;
+}
+
+.routes {
+  background-color: #1c2a39e3;
+}
+
+h2 {
+  font-size: 18px;
+}
+
+i {
+  padding: 10px;
+}
+
+h1,
+.col-md-2 {
+  font-size: 30px;
+}
+
+.head-nav {
+  background-color: #fff;
+  z-index: 100;
+  border-bottom: 1px solid #e3e7ea;
+  // left: 16.6666%;
+}
+
+.head-nav .voters {
+  // right: 16.6666%;
+}
+
+// .hhh {
+//   z-index: 1111111;
+// }
+
+section {
+  // right: -19.666%;
+  background-color: #F6F8FA;
+}
+
+.route-item {
+  cursor: pointer;
+  width: 100%;
+//   padding: 10px 0;
+}
+
+.route-item .nav-link{
+    padding: 10px 0;
+}
+
+.route-item:hover {
+  background-color: #15202B !important;
+}
+
+hr {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+
+.sidebar-info {
+    padding: 1em;
+}
+
+
+.nav-pills .nav-link.active{
+    background-color: #15202B;
+}
+
+.nav-pills .nav-link{
+    color: white !important;
+    width: 100%;
+}
+
+.col-md-1 img.gingerprint{
+  width: 60px !important;
+}

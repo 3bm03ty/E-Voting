@@ -1,0 +1,30 @@
+h4{
+    background-color: #fff;
+    border-bottom: 1px solid #e3e7ea;
+}
+
+.setting-item{
+    // background-color: ;
+}
+
+.nav-item, .nav-item button{
+    width: 100%;
+}
+
+.nav-pills .nav-link{
+    color: black !important;
+    padding: 10px ;
+    margin-bottom: 10px 0;
+}
+.nav-pills .nav-link:hover{
+    color: white !important;
+    background-color: #0bacfa;
+}
+.nav-pills .nav-link i{
+    font-size: 14px;
+    padding-right: 10px;
+}
+.nav-pills .nav-link.active{
+    color: white !important;
+    background-color: #0bacfa;
+}

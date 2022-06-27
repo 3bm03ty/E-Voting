@@ -1,0 +1,537 @@
+<div class="title shadow-sm">
+  <h4 class="p-2 px-4 bg-white py-2"><i class="fa-solid fa-person-booth"></i> Voters (2)</h4>
+</div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-2">
+      <ul class="nav nav-tabs d-block" id="myTab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link p-0 w-100 active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
+            type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true"><i
+              class="fa-solid fa-user-plus"></i><br>Add Voter</button>
+        </li>
+        <li class="nav-item mt-3" role="presentation">
+          <button class="nav-link p-0 w-100" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane"
+            type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false"><i
+              class="fa-solid fa-user-pen"></i><br>Edit Voter</button>
+        </li>
+      </ul>
+
+    </div>
+    <div class=" col-md-8">
+      <div class="tab-content" id="myTabContent">
+        <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab"
+          tabindex="0">
+          <div class="row p-2 border text-center">
+            <div class="col-md-6">
+              <div class="card" style="width: 18rem;">
+                <img src="../../assets/imgs/add candidate.jpg" class="card-img-top" alt="...">
+                <!-- <img src="../../assets/imgs/add voter.webp" class="card-img-top" alt="..."> -->
+                <div class="card-body">
+                  <h5 class="card-title">ADD VOTER</h5>
+                  <p class="card-text">Add voters to vote in your election in secondes</p>
+                  <a (click)="resetTemplate()" data-bs-toggle="modal" data-bs-target="#exampleModal1"
+                    class="btn btn-primary add-btn"><i class="fa-solid fa-plus"></i> Add
+                    voter</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card" style="width: 18rem;">
+                <img src="../../assets/imgs/delete voter.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Upload VOTERS</h5>
+                  <p class="card-text">Upload Excel sheet<br>Hint: file must be in .xlsx Extension</p>
+                  <a data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-primary import-btn"><i
+                      class="fa-solid fa-cloud-arrow-up"></i> Import</a>
+                  <!-- <a (click)="route()" routerLink="/search" class="btn btn-primary">Edit & Delete</a> -->
+                </div>
+              </div>
+            </div>
+            <!-- Button trigger modal -->
+
+
+
+
+          </div>
+        </div>
+        <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+          <div class="row p-2 border text-center">
+
+            <div class="col-md-6">
+              <div class="card" style="width: 18rem;">
+                <img src="../../assets/imgs/add candidate.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">ADD VOTER</h5>
+                  <p class="card-text">Add voters to vote in your election in secondes</p>
+                  <a (click)="editSearch()" class="btn btn-primary">Edit Voter</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="card" style="width: 18rem;">
+                <img src="../../assets/imgs/candidate.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Edit VOTERS</h5>
+                  <p class="card-text">Edit or delete voters in your election</p>
+                  <a (click)="searchVoter()" class="btn btn-primary">Delete Voter</a>
+                  <!-- <a (click)="route()" routerLink="/search" class="btn btn-primary">Edit & Delete</a> -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+<!-- Import Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="voterExcel" (ngSubmit)="onUpload()">
+          <p>Insert national ID</p>
+          <input (change)="onChange($event)" type="file" accept=".xlsx" formControlName="ExcelFile"
+            class="form-control">
+          <div class="container w-50 pt-4 d-flex justify-content-around">
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button [disabled]="inSearch" data-bs-dismiss="modal" type="submit" class="btn btn-success text-white"
+              ID="SearchBtn"><span *ngIf="!inSearch == true">import</span> <span *ngIf="inSearch">import <i
+                  class="fa-solid fa-spinner fa-spin-pulse"></i></span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Add Modal -->
+<div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel1">Add Voter</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="">
+          <form [formGroup]='addVoterForm' (ngSubmit)="getRegisterInfo(addVoterForm)">
+            <!-- <form [formGroup]='registerForm' #formDirective="ngForm"
+            (ngSubmit)="getRegisterInfo(registerForm.value, formDirective)"> -->
+            <div class="m-auto py-2 ">
+
+              <div class="m-auto row">
+                <div class="col-md-12">
+
+                  <div class="row my-2 img-thumbnail shadow-sm">
+                    <div class="col-md-6 ps-0">
+                      <div class="form-group pe-2 ">
+                        <label for="fname">First Name :</label>
+
+                        <input formControlName="fname" class="form-control" id="fname" placeholder="First Name">
+                        <!--<input type="text" class="form-control"> -->
+                        <p *ngIf="addVoterForm.get('fname')?.errors != null && (addVoterForm.get('fname')?.touched || submited)"
+                          class="p-2 my-1 alert-danger text-danger ">First Name invalid</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group ps-2">
+                        <label for="pname">Parent Full Name :</label>
+                        <input formControlName="pname" class="form-control" id="pname" placeholder="Parent Full Name">
+                        <p *ngIf="addVoterForm.get('pname')?.errors != null && (addVoterForm.get('pname')?.touched|| submited)"
+                          class="p-2 my-1 alert-danger text-danger ">Parent Name invalid</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="img-thumbnail my-2 row shadow-sm">
+                    <div class="col-md-6">
+                      <label for="status">Status</label>
+                      <div class="form-group">
+                        <select formControlName="status" class="form-control" id="status">
+                          <option>Single</option>
+                          <option>Married</option>
+                        </select>
+                        <p *ngIf="addVoterForm.get('status')?.errors != null && (addVoterForm.get('status')?.touched|| submited)"
+                          class="p-2 my-1 alert-danger text-danger ">You must choose your status</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="gender">Gender</label>
+                      <div class="form-group">
+                        <select formControlName="gender" class="form-control" id="gender">
+                          <option>Male</option>
+                          <option>Female</option>
+                        </select>
+                        <p *ngIf="addVoterForm.get('gender')?.errors != null && (addVoterForm.get('gender')?.touched|| submited)"
+                          class="p-2 my-1 alert-danger text-danger ">You must choose your gender</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row my-2 img-thumbnail shadow-sm">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="city">City</label>
+                        <!-- <select formControlName="state" class="form-control" size="1"   onchange="makeSubmenu(this.value)" ID="ddlCity">  -->
+                        <select (change)="onCityChange($event)" formControlName="city" class="form-control" size="1"
+                          id="city">
+                          <option [value]=null disabled>Choose State</option>
+                          <option *ngFor="let city of Cities">{{city}}</option>
+                          <!-- <option>Aswan</option>
+                          <option>Asyut</option>
+                          <option>Beheira</option>
+                          <option>Beni Suef</option>
+                          <option>Cairo</option>
+                          <option>Dakahlia</option>
+                          <option>Damietta</option>
+                          <option>Faiyum</option>
+                          <option>Gharbia</option>
+                          <option>Giza</option>
+                          <option>Ismailia</option>
+                          <option>Kafr El Sheikh</option>
+                          <option>Luxor</option>
+                          <option>Matruh</option>
+                          <option>Minya</option>
+                          <option>Monufia</option>
+                          <option>New Valley</option>
+                          <option>North Sinai</option>
+                          <option>Port Said</option>
+                          <option>Qalyubia</option>
+                          <option>Qena</option>
+                          <option>Red Sea</option>
+                          <option>Sharqia</option>
+                          <option>Sohag</option>
+                          <option>South Sinai</option>
+                          <option>Suez</option> -->
+                        </select>
+                        <p *ngIf="addVoterForm.get('city')?.errors != null && (addVoterForm.get('city')?.touched|| submited)"
+                          class="p-2 my-1 alert-danger text-danger ">You must choose your city</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="state">State</label>
+
+                        <select formControlName="state" class="form-control" id="state" size="1">
+                          <option [value]=null disabled>Choose City</option>
+                          <option>Belqas</option>
+                          <option>Aga</option>
+                        </select>
+                        <p *ngIf="addVoterForm.get('state')?.errors != null && (addVoterForm.get('state')?.touched|| submited)"
+                          class="p-2 my-1 alert-danger text-danger ">You must choose your state</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row  my-2 img-thumbnail shadow-sm">
+                    <div class="form-group">
+                      <label for="NID">National ID</label>
+                      <input formControlName="NID" class="form-control" id="NID" placeholder="National ID">
+                      <p *ngIf="addVoterForm.get('NID')?.errors != null && (addVoterForm.get('NID')?.touched|| submited)"
+                        class="p-2 my-1 alert-danger text-danger ">National ID is invalid</p>
+                    </div>
+                  </div>
+
+                  <div class="row my-2 shadow-sm img-thumbnail">
+                    <div class="form-group">
+                      <label for="birthday">Birthday:</label>
+                      <input formControlName="birthday" class="form-control" id="birthday" TextMode="Date">
+                      <p *ngIf="addVoterForm.get('birthday')?.errors != null && (addVoterForm.get('birthday')?.touched|| submited)"
+                        class="p-2 my-1 alert-danger text-danger ">birthday is invalid</p>
+                    </div>
+                  </div>
+
+                  <div class="row my-2 shadow-sm img-thumbnail">
+                    <div class="form-group">
+
+                      <div class="row">
+                        <div class="col-md-11">
+                          <label for="template">Template:</label>
+                          <input formControlName="template" class="form-control d-none" id="template" type="text">
+                          <p class="tempText">{{template}}</p>
+                          <p *ngIf="submited" class="p-2 my-1 alert-danger text-danger ">You must add your fingerprint
+                          </p>
+                        </div>
+                        <div class="col-md-1">
+                          <img (click)="LaunchURLScript()" class="fingerPrint pt-4"
+                            src="../../assets/imgs/animated fingerprint.gif" alt="">
+                          <p class="click" (click)="LaunchURLScript()">Click</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-evenly mt-4">
+                  <button [disabled]="inResponse" class="btn btn-mine text-white w-25 shadow-lg" ID="RegisterBtn"
+                    type="submit">Add Voter</button>
+                  <button type="button" class="btn delete-btn w-25 text-center shadow-lg"
+                    data-bs-dismiss="modal">Cancel</button>
+                </div>
+
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- Search for delete -->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Voter Details</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+        <div *ngIf="!inResponse" class="profile ">
+          <p class="fw-bolder p-2">Are you sure you want to delete this voter?</p>
+          <div class=" img-thumbnail p-1 shadow-lg">
+
+            <div class="row">
+              <!-- <div class="col-md-4">
+                <div class="profile-img-containe text-center">
+                  <img class=" img-thumbnail p-3 " src="../../assets/imgs/person.png" alt="">
+                </div>
+              </div> -->
+              <div class="col-md-12 d-flex align-items-center">
+                <ul>
+                  <li><strong>Name : </strong>
+                    <label>{{voter?.fname||""}} {{voter?.pname||""}}</label></li>
+                  <li><strong>N. ID : </strong>
+                    <label>{{voter?.NID||""}}</label></li>
+                  <!-- <li><strong>Age : </strong> -->
+                  <!-- <label ID="voterAge">{{age||""}}</label></li> -->
+                  <li><strong>Address : </strong>
+                    <label>{{voter?.state||"" + " / " + voter?.city||""}}</label></li>
+                  <li><strong>Gender : </strong>
+                    <label>{{voter?.gender||""}}</label></li>
+                </ul>
+              </div>
+              <!-- <div class="col-md-12">
+                <div class="container w-50 pt-4 d-flex justify-content-around">
+
+                  <button class="text-uppercase btn text-white btn-danger">Delete</button>
+
+
+                </div>
+              </div> -->
+            </div>
+          </div>
+        </div>
+        <!-- <div *ngIf="inResponse" class="loading-div">
+          <div class="loader m-auto">
+          </div>
+        </div> -->
+      </div>
+      <div class="modal-footer">
+        <button (click)="deleteVoter(voter.NID)" [disabled]="inResponse" type="button" class="btn btn-danger">Delete</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- Edit Modal -->
+<div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel3">Edit Voter</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="">
+          <form [formGroup]='editVoterForm' (ngSubmit)="updateVoter(editVoterForm)">
+            <!-- <form [formGroup]='registerForm' #formDirective="ngForm"
+            (ngSubmit)="getRegisterInfo(registerForm.value, formDirective)"> -->
+            <div class="m-auto py-2 ">
+
+              <div class="m-auto row">
+                <div class="col-md-12">
+
+                  <div class="row my-2 img-thumbnail shadow-sm">
+                    <div class="col-md-6 ps-0">
+                      <div class="form-group pe-2 ">
+                        <label for="fname">First Name :</label>
+
+                        <input formControlName="fname" class="form-control" id="fname" placeholder="First Name">
+                        <!--<input type="text" class="form-control"> -->
+                        <p *ngIf="addVoterForm.get('fname')?.errors != null && (addVoterForm.get('fname')?.touched || submited)"
+                          class="p-2 my-1 alert-danger text-danger ">First Name invalid</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group ps-2">
+                        <label for="pname">Parent Full Name :</label>
+                        <input formControlName="pname" class="form-control" id="pname" placeholder="Parent Full Name">
+                        <p *ngIf="addVoterForm.get('pname')?.errors != null && (addVoterForm.get('pname')?.touched|| submited)"
+                          class="p-2 my-1 alert-danger text-danger ">Parent Name invalid</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="img-thumbnail my-2 row shadow-sm">
+                    <div class="col-md-6">
+                      <label for="status">Status</label>
+                      <div class="form-group">
+                        <select formControlName="status" class="form-control" id="status">
+                          <option>Single</option>
+                          <option>Married</option>
+                        </select>
+                        <p *ngIf="addVoterForm.get('status')?.errors != null && (addVoterForm.get('status')?.touched|| submited)"
+                          class="p-2 my-1 alert-danger text-danger ">You must choose your status</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <label for="gender">Gender</label>
+                      <div class="form-group">
+                        <select formControlName="gender" class="form-control" id="gender">
+                          <option>Male</option>
+                          <option>Female</option>
+                        </select>
+                        <p *ngIf="addVoterForm.get('gender')?.errors != null && (addVoterForm.get('gender')?.touched|| submited)"
+                          class="p-2 my-1 alert-danger text-danger ">You must choose your gender</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row my-2 img-thumbnail shadow-sm">
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="city">City</label>
+                        <!-- <select formControlName="state" class="form-control" size="1"   onchange="makeSubmenu(this.value)" ID="ddlCity">  -->
+                        <select (change)="onCityChange($event)" formControlName="city" class="form-control" size="1"
+                          id="city">
+                          <option [value]=null disabled>Choose State</option>
+                          <option *ngFor="let city of Cities">{{city}}</option>
+                          <!-- <option>Aswan</option>
+                          <option>Asyut</option>
+                          <option>Beheira</option>
+                          <option>Beni Suef</option>
+                          <option>Cairo</option>
+                          <option>Dakahlia</option>
+                          <option>Damietta</option>
+                          <option>Faiyum</option>
+                          <option>Gharbia</option>
+                          <option>Giza</option>
+                          <option>Ismailia</option>
+                          <option>Kafr El Sheikh</option>
+                          <option>Luxor</option>
+                          <option>Matruh</option>
+                          <option>Minya</option>
+                          <option>Monufia</option>
+                          <option>New Valley</option>
+                          <option>North Sinai</option>
+                          <option>Port Said</option>
+                          <option>Qalyubia</option>
+                          <option>Qena</option>
+                          <option>Red Sea</option>
+                          <option>Sharqia</option>
+                          <option>Sohag</option>
+                          <option>South Sinai</option>
+                          <option>Suez</option> -->
+                        </select>
+                        <p *ngIf="addVoterForm.get('city')?.errors != null && (addVoterForm.get('city')?.touched|| submited)"
+                          class="p-2 my-1 alert-danger text-danger ">You must choose your city</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="state">State</label>
+
+                        <select formControlName="state" class="form-control" id="state" size="1">
+                          <option [value]=null disabled>Choose City</option>
+                          <option>Belqas</option>
+                          <option>Aga</option>
+                        </select>
+                        <p *ngIf="addVoterForm.get('state')?.errors != null && (addVoterForm.get('state')?.touched|| submited)"
+                          class="p-2 my-1 alert-danger text-danger ">You must choose your state</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row  my-2 img-thumbnail shadow-sm">
+                    <div class="form-group">
+                      <label for="NID">National ID</label>
+                      <input formControlName="NID" class="form-control" id="NID" placeholder="National ID">
+                      <p *ngIf="addVoterForm.get('NID')?.errors != null && (addVoterForm.get('NID')?.touched|| submited)"
+                        class="p-2 my-1 alert-danger text-danger ">National ID is invalid</p>
+                    </div>
+                  </div>
+
+                  <div class="row my-2 shadow-sm img-thumbnail">
+                    <div class="form-group">
+                      <label for="birthday">Birthday:</label>
+                      <input formControlName="birthday" class="form-control" id="birthday" TextMode="Date">
+                      <p *ngIf="addVoterForm.get('birthday')?.errors != null && (addVoterForm.get('birthday')?.touched|| submited)"
+                        class="p-2 my-1 alert-danger text-danger ">birthday is invalid</p>
+                    </div>
+                  </div>
+
+                  <div class="row my-2 shadow-sm img-thumbnail">
+                    <div class="form-group">
+
+                      <div class="row">
+                        <div class="col-md-11">
+                          <label for="template">Template:</label>
+                          <input formControlName="template" class="form-control d-none" id="template" type="text">
+                          <p class="tempText">{{template}}</p>
+                          <p *ngIf="submited" class="p-2 my-1 alert-danger text-danger ">You must add your fingerprint
+                          </p>
+                        </div>
+                        <div class="col-md-1">
+                          <img (click)="LaunchURLScript()" class="fingerPrint pt-4"
+                            src="../../assets/imgs/animated fingerprint.gif" alt="">
+                          <p class="click" (click)="LaunchURLScript()">Click</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-evenly mt-4">
+                  <button [disabled]="inResponse" class="btn btn-mine text-white w-25 shadow-lg" ID="RegisterBtn"
+                    type="submit">Edit Voter</button>
+                  <button (click)="cancel()" type="button" class="btn delete-btn w-25 text-center shadow-lg"
+                    data-bs-dismiss="modal">Cancel</button>
+                </div>
+
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

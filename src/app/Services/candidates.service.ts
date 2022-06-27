@@ -11,7 +11,6 @@ export class CandidatesService {
   constructor(private _HttpClient: HttpClient) { }
   getAllCandidates(): Observable<any> {
     let response = this._HttpClient.get(this.baseURL + 'candidates/');
-    // console.log(user)
     return response;
   }
   

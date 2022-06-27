@@ -1,0 +1,35 @@
+.card.card-widget.card-widget-accent {
+  background: #502ac1;
+  text-shadow: 2px 2px 0 rgb(28 15 67 / 15%);
+}
+
+.card.card-widget {
+  color: #fff;
+  margin-bottom: 1em;
+  border: none !important;
+}
+
+.card.card-widget.card-widget-accent2 {
+  background: #ef0872;
+  text-shadow: 2px 2px 0 rgb(91 3 43 / 15%);
+}
+
+.card.card-widget.card-widget-warning {
+  background: #ff6900;
+  text-shadow: 2px 2px 0 rgb(102 42 0 / 15%);
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 1rem;
+}
+
+.card.card-widget.card-widget-warning i {
+    color: #ffb480;
+    font-size: 48px;
+}
+
+.card.card-widget.card-widget-accent2 i {
+    color: #fb7cb6;
+    font-size: 48px;
+}
