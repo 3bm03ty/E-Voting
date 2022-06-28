@@ -63,8 +63,8 @@
               <div class="card" style="width: 18rem;">
                 <img src="../../assets/imgs/add candidate.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">ADD VOTER</h5>
-                  <p class="card-text">Add voters to vote in your election in secondes</p>
+                  <h5 class="card-title">Edit VOTER</h5>
+                  <p class="card-text">Edit voters to vote in your election in secondes</p>
                   <a (click)="editSearch()" class="btn btn-primary">Edit Voter</a>
                 </div>
               </div>
@@ -74,8 +74,8 @@
               <div class="card" style="width: 18rem;">
                 <img src="../../assets/imgs/candidate.jpg" class="card-img-top" alt="...">
                 <div class="card-body">
-                  <h5 class="card-title">Edit VOTERS</h5>
-                  <p class="card-text">Edit or delete voters in your election</p>
+                  <h5 class="card-title">Delete VOTERS</h5>
+                  <p class="card-text">Delete voters from your election</p>
                   <a (click)="searchVoter()" class="btn btn-primary">Delete Voter</a>
                   <!-- <a (click)="route()" routerLink="/search" class="btn btn-primary">Edit & Delete</a> -->
                 </div>
@@ -92,7 +92,7 @@
 
 
 
-<!-- Import Modal -->
+<!-- Import Voter Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -122,9 +122,7 @@
 </div>
 
 
-
-
-<!-- Add Modal -->
+<!-- Add Voter Modal -->
 <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -300,9 +298,7 @@
 </div>
 
 
-
-
-<!-- Search for delete -->
+<!-- Search for delete Voter -->
 <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel2" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -361,7 +357,7 @@
 </div>
 
 
-<!-- Edit Modal -->
+<!-- Edit Voter Modal -->
 <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel3" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -386,7 +382,7 @@
 
                         <input formControlName="fname" class="form-control" id="fname" placeholder="First Name">
                         <!--<input type="text" class="form-control"> -->
-                        <p *ngIf="addVoterForm.get('fname')?.errors != null && (addVoterForm.get('fname')?.touched || submited)"
+                        <p *ngIf="editVoterForm.get('fname')?.errors != null && (editVoterForm.get('fname')?.touched || submited)"
                           class="p-2 my-1 alert-danger text-danger ">First Name invalid</p>
                       </div>
                     </div>
@@ -394,7 +390,7 @@
                       <div class="form-group ps-2">
                         <label for="pname">Parent Full Name :</label>
                         <input formControlName="pname" class="form-control" id="pname" placeholder="Parent Full Name">
-                        <p *ngIf="addVoterForm.get('pname')?.errors != null && (addVoterForm.get('pname')?.touched|| submited)"
+                        <p *ngIf="editVoterForm.get('pname')?.errors != null && (editVoterForm.get('pname')?.touched|| submited)"
                           class="p-2 my-1 alert-danger text-danger ">Parent Name invalid</p>
                       </div>
                     </div>
@@ -408,7 +404,7 @@
                           <option>Single</option>
                           <option>Married</option>
                         </select>
-                        <p *ngIf="addVoterForm.get('status')?.errors != null && (addVoterForm.get('status')?.touched|| submited)"
+                        <p *ngIf="editVoterForm.get('status')?.errors != null && (editVoterForm.get('status')?.touched|| submited)"
                           class="p-2 my-1 alert-danger text-danger ">You must choose your status</p>
                       </div>
                     </div>
@@ -419,7 +415,7 @@
                           <option>Male</option>
                           <option>Female</option>
                         </select>
-                        <p *ngIf="addVoterForm.get('gender')?.errors != null && (addVoterForm.get('gender')?.touched|| submited)"
+                        <p *ngIf="editVoterForm.get('gender')?.errors != null && (editVoterForm.get('gender')?.touched|| submited)"
                           class="p-2 my-1 alert-danger text-danger ">You must choose your gender</p>
                       </div>
                     </div>
@@ -461,7 +457,7 @@
                           <option>South Sinai</option>
                           <option>Suez</option> -->
                         </select>
-                        <p *ngIf="addVoterForm.get('city')?.errors != null && (addVoterForm.get('city')?.touched|| submited)"
+                        <p *ngIf="editVoterForm.get('city')?.errors != null && (editVoterForm.get('city')?.touched|| submited)"
                           class="p-2 my-1 alert-danger text-danger ">You must choose your city</p>
                       </div>
                     </div>
@@ -475,7 +471,7 @@
                           <option>Belqas</option>
                           <option>Aga</option>
                         </select>
-                        <p *ngIf="addVoterForm.get('state')?.errors != null && (addVoterForm.get('state')?.touched|| submited)"
+                        <p *ngIf="editVoterForm.get('state')?.errors != null && (editVoterForm.get('state')?.touched|| submited)"
                           class="p-2 my-1 alert-danger text-danger ">You must choose your state</p>
                       </div>
                     </div>
@@ -485,7 +481,7 @@
                     <div class="form-group">
                       <label for="NID">National ID</label>
                       <input formControlName="NID" class="form-control" id="NID" placeholder="National ID">
-                      <p *ngIf="addVoterForm.get('NID')?.errors != null && (addVoterForm.get('NID')?.touched|| submited)"
+                      <p *ngIf="editVoterForm.get('NID')?.errors != null && (editVoterForm.get('NID')?.touched|| submited)"
                         class="p-2 my-1 alert-danger text-danger ">National ID is invalid</p>
                     </div>
                   </div>
@@ -494,7 +490,7 @@
                     <div class="form-group">
                       <label for="birthday">Birthday:</label>
                       <input formControlName="birthday" class="form-control" id="birthday" TextMode="Date">
-                      <p *ngIf="addVoterForm.get('birthday')?.errors != null && (addVoterForm.get('birthday')?.touched|| submited)"
+                      <p *ngIf="editVoterForm.get('birthday')?.errors != null && (editVoterForm.get('birthday')?.touched|| submited)"
                         class="p-2 my-1 alert-danger text-danger ">birthday is invalid</p>
                     </div>
                   </div>
@@ -535,3 +531,4 @@
     </div>
   </div>
 </div>
+

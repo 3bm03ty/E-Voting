@@ -124,7 +124,7 @@ export class VotersComponent implements OnInit {
         }
       });
 
-      this._VotingService
+      this._VotersService
         .uploadVoterExcel(this.file)
         .subscribe((event: any) => {
           if (typeof event === 'object') {
@@ -203,8 +203,8 @@ export class VotersComponent implements OnInit {
       showLoaderOnConfirm: true,
       preConfirm: (NID) => {
         if (NID != '') {
-          // 
-          Swal.fire("Loading ....")
+          //
+          Swal.fire('Loading ....');
           Swal.showLoading();
           this.inResponse = true;
           // Swal.fire({
@@ -220,10 +220,10 @@ export class VotersComponent implements OnInit {
               this.inResponse = false;
               $('#exampleModal2').modal('show');
               Swal.close();
-            }else{
+            } else {
               // $('#exampleModal2').modal('hide');
-              Swal.fire("No voter found with this National ID")
-              // 
+              Swal.fire('No voter found with this National ID');
+              //
             }
           });
         }
@@ -277,7 +277,7 @@ export class VotersComponent implements OnInit {
       });
   }
 
-  editSearch(){
+  editSearch() {
     Swal.fire({
       title: 'Enter Voter ID',
       input: 'text',
@@ -289,8 +289,8 @@ export class VotersComponent implements OnInit {
       showLoaderOnConfirm: true,
       preConfirm: (NID) => {
         if (NID != '') {
-          // 
-          Swal.fire("Loading ....")
+          //
+          Swal.fire('Loading ....');
           Swal.showLoading();
           this.inResponse = true;
           // Swal.fire({
@@ -307,10 +307,10 @@ export class VotersComponent implements OnInit {
               $('#exampleModal3').modal('show');
               Swal.close();
               this.setEditInfo(this.editVoterForm);
-            }else{
+            } else {
               // $('#exampleModal2').modal('hide');1234567895124
-              Swal.fire("No voter found with this National ID")
-              // 
+              Swal.fire('No voter found with this National ID');
+              //
             }
           });
         }
@@ -319,7 +319,7 @@ export class VotersComponent implements OnInit {
     });
   }
 
-  setEditInfo(editVoterForm:any){
+  setEditInfo(editVoterForm: any) {
     editVoterForm.setValue({
       fname: this.voter.fname,
       pname: this.voter.pname,
@@ -329,43 +329,39 @@ export class VotersComponent implements OnInit {
       gender: this.voter.gender,
       state: this.voter.state,
       status: this.voter.status,
-      template: this.voter.template
+      template: this.voter.template,
     });
     this.template = this.voter.template;
     // this.editVoterForm.
   }
 
-  updateVoter(editVoterForm:any){
-    console.log({'_id':this.voter._id,...editVoterForm.value});
-    $('#exampleModal3').modal('hide');
-    Swal.fire("Loading ....")
-    Swal.showLoading();
-    this._VotersService.updateVoter({'_id':this.voter._id,...editVoterForm.value}).subscribe((response)=>{
-      console.log(response);
-      Swal.hideLoading();
-      if(response.success){
-        Swal.fire(
-          'Updated!',
-          'Voter has been updated.',
-          'success'
-        )
-      }else{
-        Swal.fire({
-          icon: 'error',
-          title: 'Oops...',
-          text: 'Something went wrong!'
-        })
-        
-      }
-    })
+  updateVoter(editVoterForm: any) {
+    console.log({ _id: this.voter._id, ...editVoterForm.value });
+    if (editVoterForm.status == 'VALID') {
+      $('#exampleModal3').modal('hide');
+      Swal.fire('Loading ....');
+      Swal.showLoading();
+      this._VotersService
+        .updateVoter({ _id: this.voter._id, ...editVoterForm.value })
+        .subscribe((response) => {
+          console.log(response);
+          Swal.hideLoading();
+          if (response.success) {
+            Swal.fire('Updated!', 'Voter has been updated.', 'success');
+          } else {
+            Swal.fire({
+              icon: 'error',
+              title: 'Oops...',
+              text: 'Something went wrong!',
+            });
+          }
+        });
+    }
+    console.log(editVoterForm.status);
   }
 
-  cancel(){
-    Swal.fire(
-      'Cancelled',
-      ' :)',
-      'error'
-    )
+  cancel() {
+    Swal.fire('Cancelled', ' :)', 'error');
   }
 
   getTemplate() {

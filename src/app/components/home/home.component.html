@@ -7,9 +7,23 @@
           <h1 (click)="showToasterSuccess()"><i class="fas fa-fingerprint"></i> 2022 <i class="fas fa-fingerprint"></i></h1>
           <h2 class="">Electronic Voting
             Using Fingerprint</h2>
-          <button (click)="home()" routerLink="/search" class="text-uppercase btn text-white more-info-btn">
+            <div (click)="home()" routerLink="/search" class="btn-test">
+              <div class="container1">
+                <div class="center">
+                  <button class="btn">
+                    <svg width="180px" height="60px" viewBox="0 0 180 60" class="border">
+                      <polyline points="179,1 179,59 1,59 1,1 179,1" class="bg-line" />
+                      <polyline points="179,1 179,59 1,59 1,1 179,1" class="hl-line" />
+                    </svg>
+                    <span>Vote Now</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          <!-- <button  routerLink="/search" class="text-uppercase btn text-white more-info-btn">
             Vote Now
-          </button>
+          </button> -->
+          
         </div>
       </div>
       <!-- <div class="left-side position-absolute">

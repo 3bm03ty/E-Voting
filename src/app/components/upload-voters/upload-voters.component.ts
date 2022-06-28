@@ -20,7 +20,7 @@ export class UploadVotersComponent implements OnInit {
     private _AuthService: AuthService,
     private _Router: Router,
     private _VotersService: VotersService,
-    private _VotingService: VotingService
+    private _VotingService: VotingService,
   ) {}
   onChange(event: any) {
     this.file = event.target.files[0];
@@ -30,7 +30,7 @@ export class UploadVotersComponent implements OnInit {
     this.loading = !this.loading;
     console.log(this.file);
     this.percent = 85;
-    this._VotingService.uploadVoterExcel(this.file).subscribe((event: any) => {
+    this._VotersService.uploadVoterExcel(this.file).subscribe((event: any) => {
       if (typeof event === 'object') {
         // Short link via api response
         this.shortLink = event.link;

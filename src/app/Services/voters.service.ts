@@ -35,4 +35,12 @@ export class VotersService {
     });
     return response;
   }
+
+  uploadVoterExcel(excel:any): Observable<any> {
+    const formData = new FormData()
+    formData.append("voter", excel, excel.name);
+    return this._HttpClient.post(this.baseURL + 'voters/excel',formData);
+    // return response;
+  }
+ 
 }
