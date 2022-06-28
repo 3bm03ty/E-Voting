@@ -35,6 +35,7 @@ import { DatesComponent } from './components/dates/dates.component';
 import { DeleteComponent } from './components/delete/delete.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { DataTablesModule } from "angular-datatables";
+import { ResultsComponent } from './results/results.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { DataTablesModule } from "angular-datatables";
     DatesComponent,
     DeleteComponent,
     SettingsComponent,
+    ResultsComponent,
   ],
   imports: [
     BrowserModule,

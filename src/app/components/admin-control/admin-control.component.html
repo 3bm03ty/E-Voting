@@ -86,12 +86,12 @@
 
 <section>
   <div class="row m-0 ">
-    <div class="col-2 p-0 hhh vh-100 bg-info  text-center text-white">
+    <div class="col-2 p-0 hhh vh-100 bg-info  text-center text-white position-fixed">
 
       <div class="routes  h-100 text-start d-flex flex-column justify-content-between">
         <div>
           <div class="head p-3">
-            <h1><i class="fas fa-fingerprint"></i> E-Voting</h1>
+            <h1 routerLink="/home"><i class="fas fa-fingerprint"></i> E-Voting</h1>
           </div>
           <!-- <div routerLink="overview" class="route-item pt-1">
             <h2 class="py-2"><i class="fa-solid fa-house-laptop"></i> Overview</h2>
@@ -126,6 +126,11 @@
                 aria-controls="pills-contact" aria-selected="false"><i class="fa-solid fa-user-tie"></i> Candidates
               </button>
             </li>
+            <li routerLink="results" class="nav-item route-item" role="presentation">
+              <button class="nav-link text-start" id="pills-contact-tab" data-bs-toggle="pill" type="button" role="tab"
+                aria-controls="pills-contact" aria-selected="false"><i class="fa-solid fa-user-tie"></i> Results
+              </button>
+            </li>
           </ul>
           <hr class="">
         </div>
@@ -152,9 +157,11 @@
       </div>
 
     </div>
+    <div class="col-2 p-0 "></div>
+
     <div class="col-10 p-0">
       <div class="head-nav px-2 py-4 d-flex justify-content-between align-items-center w-100 ">
-        <div class="col-md-2">mmm</div>
+        <div class="col-md-10 fw-bolder">Egyptian Presidential Election</div>
         <div class="col-md-2 voters position-relative">2 Voters</div>
       </div>
       <div class=" ">

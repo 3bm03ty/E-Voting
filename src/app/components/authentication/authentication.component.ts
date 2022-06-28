@@ -26,8 +26,13 @@ export class AuthenticationComponent implements OnInit {
 
   voteNow() {
     if (this.matched == 'Matched') {
-      this._Router.navigate(['/voting']);
+      setTimeout(()=>{
+        this._Router.navigate(['/voting']);
+      },2000)
       this.isMatch = true;
+      this._VotingService.resetTemplate().subscribe((response) => {
+        console.log(response);
+      });
     }
   }
 
