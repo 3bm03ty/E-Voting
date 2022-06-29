@@ -84,14 +84,14 @@
 </div> -->
 
 
-<section>
+<section class="min-vh-100">
   <div class="row m-0 ">
-    <div class="col-2 p-0 hhh vh-100 bg-info  text-center text-white position-fixed">
+    <div class="col-2 p-0 pb-3 min-vh-100 hhh text-center text-white position-fixed">
 
-      <div class="routes  h-100 text-start d-flex flex-column justify-content-between">
+      <div class="routes text-start d-flex flex-column justify-content-between">
         <div>
-          <div class="head p-3">
-            <h1 routerLink="/home"><i class="fas fa-fingerprint"></i> E-Voting</h1>
+          <div class="head p-1 py-2">
+            <h1 routerLink="/home"><i class="fas fa-fingerprint text-center"></i> <span>E-Voting</span></h1>
           </div>
           <!-- <div routerLink="overview" class="route-item pt-1">
             <h2 class="py-2"><i class="fa-solid fa-house-laptop"></i> Overview</h2>
@@ -110,25 +110,28 @@
             <li routerLink="overview" class="nav-item route-item" role="presentation">
               <button class="nav-link active text-start" id="pills-home-tab" data-bs-toggle="pill" type="button"
                 role="tab" aria-controls="pills-home" aria-selected="true"><i class="fa-solid fa-house-laptop"></i>
-                Overview</button>
+                <span>Overview</span></button>
             </li>
             <li routerLink="settings" class="nav-item route-item" role="presentation">
               <button class="nav-link text-start" id="pills-profile-tab" data-bs-toggle="pill" type="button" role="tab"
-                aria-controls="pills-profile" aria-selected="false"><i class="fa-solid fa-gear"></i> Settings</button>
+                aria-controls="pills-profile" aria-selected="false"><i class="fa-solid fa-gear"></i> <span
+                  class="">Settings</span></button>
             </li>
             <li routerLink="voters" class="nav-item route-item" role="presentation">
               <button class="nav-link text-start" id="pills-contact-tab" data-bs-toggle="pill" type="button" role="tab"
                 aria-controls="pills-contact" aria-selected="false"><i class="fa-solid fa-person-booth"></i>
-                Voters</button>
+                <span>Voters</span></button>
             </li>
             <li routerLink="candidates" class="nav-item route-item" role="presentation">
               <button class="nav-link text-start" id="pills-contact-tab" data-bs-toggle="pill" type="button" role="tab"
-                aria-controls="pills-contact" aria-selected="false"><i class="fa-solid fa-user-tie"></i> Candidates
+                aria-controls="pills-contact" aria-selected="false"><i class="fa-solid fa-user-tie"></i>
+                <span>Candidates</span>
               </button>
             </li>
             <li routerLink="results" class="nav-item route-item" role="presentation">
               <button class="nav-link text-start" id="pills-contact-tab" data-bs-toggle="pill" type="button" role="tab"
-                aria-controls="pills-contact" aria-selected="false"><i class="fa-solid fa-user-tie"></i> Results
+                aria-controls="pills-contact" aria-selected="false"><i class="fa-solid fa-square-poll-vertical"></i>
+                <span>Results</span>
               </button>
             </li>
           </ul>
@@ -137,18 +140,18 @@
 
         <div class="sidebar-info">
           <ul class="list-unstyled info-list mb-0">
-            <li class="mb-3 ng-star-inserted">
+            <!-- <li class="mb-3 ng-star-inserted">
               <div>
                 <span class="text-muted ml-1 text-decoration-none">2 Voters</span>
               </div>
-            </li>
-            <li class="text-muted font-weight-bold">Start Date</li>
+            </li> -->
+            <li class="text-muted font-weight-bold"><i class="fa-solid fa-calendar-check"></i> Start Date</li>
             <li class="mb-3 sidebar-start-date"><a class="text-white text-decoration-none"
                 routerLink="settings/dates">6/23/22, 1:00 PM</a></li>
-            <li class="text-muted font-weight-bold">End Date</li>
+            <li class="text-muted font-weight-bold"><i class="fa-solid fa-calendar-xmark"></i> End Date</li>
             <li class="mb-3 sidebar-end-date"><a class="text-white text-decoration-none"
                 routerLink="settings/dates">6/30/22, 12:00 PM</a></li>
-            <li class="text-muted font-weight-bold">Timezone</li>
+            <li class="text-muted font-weight-bold"><i class="fa-solid fa-timeline"></i> Timezone</li>
             <li class=" sidebar-timezone"><a class="text-white text-decoration-none"
                 href="/election/258947/settings/dates">Africa/Cairo</a></li>
           </ul>
@@ -157,15 +160,18 @@
       </div>
 
     </div>
+
+
     <div class="col-2 p-0 "></div>
 
     <div class="col-10 p-0">
-      <div class="head-nav px-2 py-4 d-flex justify-content-between align-items-center w-100 ">
-        <div class="col-md-10 fw-bolder">Egyptian Presidential Election</div>
-        <div class="col-md-2 voters position-relative">2 Voters</div>
-      </div>
-      <div class=" ">
-        <router-outlet></router-outlet>
+
+      <div class="">
+        <div class="head-nav px-2 py-4 d-flex justify-content-between align-items-center w-100 ">
+          <div class="col-md-10 fw-bolder">Egyptian Presidential Election</div>
+          <div class="col-md-2 voters position-relative">118,958 Voters</div>
+        </div>
+        <router-outlet class=""></router-outlet>
       </div>
     </div>
   </div>

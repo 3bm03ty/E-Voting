@@ -1,9 +1,9 @@
 <section>
   <div class="container d-flex align-items-center">
-    <div class="row">
+    <div class="row ccc">
       <div (click)="vote(candidate)" *ngFor="let candidate of candidates" class="col-md-6 elected-item1 my-3">
-        <div class="elected-item2 shadow-sm p-4 rounded-3">
-          <div class="row justify-content-evenly align-items-center">
+        <div class="elected-item2 p-2 shadow-lg rounded-3">
+          <div class="row m-0 justify-content-evenly align-items-center">
             <div class="text-center col-4 elected-img pe-1">
               <img
                 [src]="candidate.cpic? 'https://routeegypt.com/pinkboatIMG/uploads/'+candidate.cpic:'../../assets/imgs/person.png'"

@@ -97,6 +97,8 @@ export class CandidatesComponent implements OnInit {
       this._CandidatesService
         .uploadCandidateExcel(this.file)
         .subscribe((event: any) => {
+          console.log(event);
+          
           if (typeof event === 'object') {
             // Short link via api response
             this.shortLink = event.link;
@@ -119,6 +121,7 @@ export class CandidatesComponent implements OnInit {
         });
     }
   }
+ 
 
   getRegisterInfo(addCandidateForm: any) {
     // console.log(addCandidateForm.value);
@@ -307,6 +310,7 @@ export class CandidatesComponent implements OnInit {
     editCandidateForm.setValue({
       fname: this.candidate.fname,
       pname: this.candidate.pname,
+      nickName: this.candidate.nickName,
       NID: this.candidate.NID,
       clogo: this.candidate.clogo,
       cpic: this.candidate.cpic,
@@ -319,6 +323,11 @@ export class CandidatesComponent implements OnInit {
       $('#exampleModal3').modal('hide');
       Swal.fire('Loading ....');
       Swal.showLoading();
+      console.log({
+        _id: this.candidate._id,
+        ...editCandidateForm.value,
+      });
+      
       this._CandidatesService
         .updateCandidate({
           _id: this.candidate._id,

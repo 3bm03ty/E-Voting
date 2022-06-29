@@ -41,7 +41,7 @@ export class CandidatesService {
 
   uploadCandidateExcel(excel:any): Observable<any> {
     const formData = new FormData()
-    formData.append("voter", excel, excel.name);
+    formData.append("cand", excel, excel.name);
     return this._HttpClient.post(this.baseURL + 'candidates/excel',formData);
     // return response;
   }
@@ -56,5 +56,7 @@ export class CandidatesService {
     formData.append("file", img, img.name);
     return this._HttpClient.post('https://routeegypt.com/pinkboatIMG/',formData);
   }
+
+
   
 }

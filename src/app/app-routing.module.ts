@@ -1,5 +1,5 @@
 import { ChartsComponent } from './components/charts/charts.component';
-import { ResultsComponent } from './results/results.component';
+import { ResultsComponent } from './components/results/results.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AdminControlComponent } from './components/admin-control/admin-control.component';
@@ -56,7 +56,7 @@ const routes: Routes = [
       },
       { path: 'candidates', component: CandidatesComponent },
       { path: 'voters', component: VotersComponent },
-      { path: 'results', component: ResultsComponent },
+      { path: 'results', component: ChartsComponent },
       { path: 'charts', component: ChartsComponent },
     ],
   },

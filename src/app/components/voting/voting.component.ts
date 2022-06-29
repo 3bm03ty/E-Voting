@@ -21,7 +21,7 @@ export class VotingComponent implements OnInit {
     private _Router: Router
   ) {
     if (this._VotersService.voter == null) {
-      this._Router.navigate(['/search']);
+      // this._Router.navigate(['/search']);
     }
   }
 

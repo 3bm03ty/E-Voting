@@ -168,7 +168,7 @@
                       <div class="col-md-6 ps-0">
                         <div class="form-group pe-2 ">
                           <label for="nickName">Nick Name :</label>
-  
+
                           <input formControlName="nickName" class="form-control" id="nickName" placeholder="Nick Name">
                           <!--<input type="text" class="form-control"> -->
                           <p *ngIf="addCandidateForm.get('nickName')?.errors != null && (addCandidateForm.get('nickName')?.touched || submited)"
@@ -184,7 +184,7 @@
                         </div>
                       </div>
                     </div>
-                    
+
                   </div>
                 </div>
                 <div class="col-md-12">
@@ -193,7 +193,8 @@
                       <div class="form-group pe-2 ">
                         <label for="cpic">Candidate Picture :</label>
 
-                        <input (change)="onFile1Change($event)" accept="image/*" type="file" class="form-control" id="cpic" placeholder="Candidate Picture">
+                        <input (change)="onFile1Change($event)" accept="image/*" type="file" class="form-control"
+                          id="cpic" placeholder="Candidate Picture">
                         <!--<input type="text" class="form-control"> -->
                         <img class="mt-3" [src]="image1Src" *ngIf="image1Src" style="width:100%">
                         <p *ngIf="addCandidateForm.get('cpic')?.errors != null && (addCandidateForm.get('cpic')?.touched || submited)"
@@ -203,7 +204,8 @@
                     <div class="col-md-6">
                       <div class="form-group ps-2">
                         <label for="clogo">Candidate Logo :</label>
-                        <input accept="image/*" (change)="onFile2Change($event)"   type="file" class="form-control" id="clogo" placeholder="Candidate Logo">
+                        <input accept="image/*" (change)="onFile2Change($event)" type="file" class="form-control"
+                          id="clogo" placeholder="Candidate Logo">
                         <img class="mt-3" [src]="image2Src" *ngIf="image2Src" style="width:100%">
                         <p *ngIf="addCandidateForm.get('clogo')?.errors != null && (addCandidateForm.get('clogo')?.touched|| submited)"
                           class="p-2 my-1 alert-danger text-danger ">Parent Name invalid</p>
@@ -255,10 +257,10 @@
                     <label>{{candidate?.NID||""}}</label></li>
                   <!-- <li><strong>Age : </strong> -->
                   <!-- <label ID="voterAge">{{age||""}}</label></li> -->
-                  <li><strong>Address : </strong>
-                    <!-- <label>{{candidate?.state||"" + " / " + candidate?.city||""}}</label></li> -->
-                  <li><strong>Gender : </strong>
-                    <!-- <label>{{candidate?.gender||""}}</label></li> -->
+                  <li><strong>Nickname: </strong>
+                    <label>{{candidate?.nickName||""}}</label></li>
+                  <!-- <li><strong>Gender : </strong></li> -->
+                  <!-- <label>{{candidate?.gender||""}}</label></li> -->
                 </ul>
               </div>
               <!-- <div class="col-md-12">
@@ -327,20 +329,54 @@
                   </div>
 
                   <div class="img-thumbnail my-2 row shadow-sm">
+                    <div class="col-md-6 ps-0">
+                      <div class="form-group pe-2 ">
+                        <label for="NID">National ID</label>
 
+                        <input formControlName="NID" class="form-control" id="NID" placeholder="National ID">
+                        <p *ngIf="editCandidateForm.get('NID')?.errors != null && (editCandidateForm.get('NID')?.touched|| submited)"
+                          class="p-2 my-1 alert-danger text-danger ">National ID is invalid</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group ps-2">
+                        <label for="nickName">Nickname :</label>
+                        <input formControlName="nickName" class="form-control" id="nickName"
+                          placeholder="Parent Full Name">
+                        <p *ngIf="editCandidateForm.get('nickName')?.errors != null && (editCandidateForm.get('nickName')?.touched|| submited)"
+                          class="p-2 my-1 alert-danger text-danger ">Parent Name invalid</p>
+                      </div>
+                    </div>
 
                   </div>
 
 
+                  <div class="img-thumbnail my-2 row shadow-sm">
+                    <div class="col-md-6">
+                      <div class="form-group pe-2 ">
+                        <label for="cpic">Candidate Picture :</label>
 
-                  <div class="row  my-2 img-thumbnail shadow-sm">
-                    <div class="form-group">
-                      <label for="NID">National ID</label>
-                      <input formControlName="NID" class="form-control" id="NID" placeholder="National ID">
-                      <p *ngIf="editCandidateForm.get('NID')?.errors != null && (editCandidateForm.get('NID')?.touched|| submited)"
-                        class="p-2 my-1 alert-danger text-danger ">National ID is invalid</p>
+                        <input (change)="onFile1Change($event)" accept="image/*" type="file" class="form-control"
+                          id="cpic" placeholder="Candidate Picture">
+                        <!--<input type="text" class="form-control"> -->
+                        <img class="mt-3" [src]="image1Src" *ngIf="image1Src" style="width:100%">
+                        <p *ngIf="addCandidateForm.get('cpic')?.errors != null && (addCandidateForm.get('cpic')?.touched || submited)"
+                          class="p-2 my-1 alert-danger text-danger ">Candidate Picture invalid</p>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="form-group ps-2">
+                        <label for="clogo">Candidate Logo :</label>
+                        <input accept="image/*" (change)="onFile2Change($event)" type="file" class="form-control"
+                          id="clogo" placeholder="Candidate Logo">
+                        <img class="mt-3" [src]="image2Src" *ngIf="image2Src" style="width:100%">
+                        <p *ngIf="addCandidateForm.get('clogo')?.errors != null && (addCandidateForm.get('clogo')?.touched|| submited)"
+                          class="p-2 my-1 alert-danger text-danger ">Parent Name invalid</p>
+                      </div>
                     </div>
                   </div>
+
+
 
 
                 </div>

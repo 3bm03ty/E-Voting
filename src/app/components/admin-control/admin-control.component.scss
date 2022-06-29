@@ -19,14 +19,13 @@
   background-color: #0BACFA;
 }
 
-.routes {
-  background-color: #1c2a39e3;
-}
+.routes {}
 
 h2 {
   font-size: 18px;
 }
-h1{
+
+h1 {
   cursor: pointer;
 }
 
@@ -43,7 +42,12 @@ h1,
   background-color: #fff;
   z-index: 100;
   border-bottom: 1px solid #e3e7ea;
-  // left: 16.6666%;
+
+}
+
+.head-nav .vvv {
+  position: relative;
+  left: 16.6666%;
 }
 
 .head-nav .voters {
@@ -62,11 +66,11 @@ section {
 .route-item {
   cursor: pointer;
   width: 100%;
-//   padding: 10px 0;
+  //   padding: 10px 0;
 }
 
-.route-item .nav-link{
-    padding: 10px 0;
+.route-item .nav-link {
+  padding: 10px 0;
 }
 
 .route-item:hover {
@@ -82,19 +86,94 @@ hr {
 
 
 .sidebar-info {
-    padding: 1em 1em 0 1em;
+  padding: 1em 1em 0 1em;
 }
 
 
-.nav-pills .nav-link.active{
-    background-color: #15202B;
+.nav-pills .nav-link.active {
+  background-color: #15202B;
 }
 
-.nav-pills .nav-link{
-    color: white !important;
-    width: 100%;
+.nav-pills .nav-link {
+  color: white !important;
+  width: 100%;
 }
 
-.col-md-1 img.gingerprint{
+.col-md-1 img.gingerprint {
   width: 60px !important;
 }
+
+.col-2.hhh {
+  overflow-y: scroll;
+  background-color: #1c2a39e3;
+  z-index: 999;
+}
+
+@media screen and (min-width : 400px) {
+  span {
+    display: none;
+  }
+
+  button i,
+  i {
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width : 800px) {
+  span {
+    text-align: center;
+    width: 100%;
+    display: block;
+  }
+
+  .head h1 {
+    font-size: 28px;
+  }
+
+  button i,
+  i {
+    font-size: 30px;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+  }
+}
+
+@media screen and (min-width : 1000px) {
+  span {
+    text-align: left;
+    width: auto;
+    display: inline-block;
+  }
+
+  .head h1 {
+    font-size: 24px;
+  }
+
+  button i,
+  i {
+    // font-size: 30px;
+    width: auto;
+    text-align: left;
+    // margin: auto;
+  }
+}
+
+@media screen and (min-width : 1150px) {
+  .head h1 {
+    font-size: 30px;
+  }
+
+  
+}
+
+
+// .fa-calendar-check,
+//   .fa-calendar-xmark,
+//   .fa-timeline {
+//     width: 100%;
+//   }
