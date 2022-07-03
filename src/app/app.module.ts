@@ -18,7 +18,6 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ChartsComponent } from './components/charts/charts.component';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AdminDashboardComponent } from './components/admin-dashboard/admin-dashboard.component';
@@ -36,6 +35,11 @@ import { DeleteComponent } from './components/delete/delete.component';
 import { SettingsComponent } from './components/settings/settings.component';
 import { DataTablesModule } from "angular-datatables";
 import { ResultsComponent } from './components/results/results.component';
+import { ReportsComponent } from './components/reports/reports.component';
+
+import { NgxDaterangepickerMd } from 'ngx-daterangepicker-material';
+
+
 
 @NgModule({
   declarations: [
@@ -54,7 +58,6 @@ import { ResultsComponent } from './components/results/results.component';
     SearchForEditComponent,
     NotFoundComponent,
     NavbarComponent,
-    ChartsComponent,
     AdminDashboardComponent,
     AdminNavbarComponent,
     VotersComponent,
@@ -66,12 +69,14 @@ import { ResultsComponent } from './components/results/results.component';
     DeleteComponent,
     SettingsComponent,
     ResultsComponent,
+    ReportsComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
     HttpClientModule,
+    NgxDaterangepickerMd.forRoot(),
     ToastrModule.forRoot(),
     BrowserAnimationsModule,
     SweetAlert2Module.forRoot(),

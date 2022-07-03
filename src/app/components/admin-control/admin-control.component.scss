@@ -16,16 +16,17 @@
 }
 
 .head {
-  background-color: #0BACFA;
+  background-color: #0bacfa;
 }
 
-.routes {}
+.routes {
+}
 
 h2 {
   font-size: 18px;
 }
 
-h1 {
+h1.h {
   cursor: pointer;
 }
 
@@ -42,7 +43,6 @@ h1,
   background-color: #fff;
   z-index: 100;
   border-bottom: 1px solid #e3e7ea;
-
 }
 
 .head-nav .vvv {
@@ -54,13 +54,24 @@ h1,
   // right: 16.6666%;
 }
 
+.pointer {
+  cursor: pointer;
+}
+.pointer:hover {
+  color: #0bacfa;
+}
+
+.logout {
+  font-size: 20px;
+}
+
 // .hhh {
 //   z-index: 1111111;
 // }
 
 section {
   // right: -19.666%;
-  background-color: #F6F8FA;
+  background-color: #f6f8fa;
 }
 
 .route-item {
@@ -74,24 +85,22 @@ section {
 }
 
 .route-item:hover {
-  background-color: #15202B !important;
+  background-color: #15202b !important;
 }
 
 hr {
   margin-top: 1rem;
   margin-bottom: 1rem;
   border: 0;
-  border-top: 1px solid rgba(0, 0, 0, .1);
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
 }
-
 
 .sidebar-info {
   padding: 1em 1em 0 1em;
 }
 
-
 .nav-pills .nav-link.active {
-  background-color: #15202B;
+  background-color: #15202b;
 }
 
 .nav-pills .nav-link {
@@ -104,12 +113,12 @@ hr {
 }
 
 .col-2.hhh {
-  overflow-y: scroll;
+  // overflow-y: scroll;
   background-color: #1c2a39e3;
   z-index: 999;
 }
 
-@media screen and (min-width : 400px) {
+@media screen and (min-width: 400px) {
   span {
     display: none;
   }
@@ -123,7 +132,7 @@ hr {
   }
 }
 
-@media screen and (min-width : 800px) {
+@media screen and (min-width: 800px) {
   span {
     text-align: center;
     width: 100%;
@@ -143,7 +152,7 @@ hr {
   }
 }
 
-@media screen and (min-width : 1000px) {
+@media screen and (min-width: 1000px) {
   span {
     text-align: left;
     width: auto;
@@ -163,17 +172,44 @@ hr {
   }
 }
 
-@media screen and (min-width : 1150px) {
+@media screen and (min-width: 1150px) {
   .head h1 {
     font-size: 30px;
   }
-
-  
 }
-
 
 // .fa-calendar-check,
 //   .fa-calendar-xmark,
 //   .fa-timeline {
 //     width: 100%;
 //   }
+
+.btn-attention {
+  background-color: #2ecd10;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  margin: auto;
+}
+.btn-attention:hover {
+  background-color: #29b10e;
+}
+
+.md-drppicker .calendar-table {
+  padding: 0px !important;
+}
+
+.md-drppicker .calendar {
+  margin: 0;
+}
+
+.md-drppicker.ltr .calendar.left .calendar-table {
+  padding-right: 0 !important;
+}
+
+@media (min-width: 564px) {
+  .md-drppicker.ltr .calendar.left .calendar-table {
+    padding-right: 0px !important;
+    background-color: red;
+  }
+}

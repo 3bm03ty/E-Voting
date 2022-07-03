@@ -1,0 +1,82 @@
+.container .nav-pills .nav-link.active {
+  background-color: #0bacfa !important;
+}
+
+
+.chart {
+  max-width: 500px !important;
+  max-height: 500px !important;
+}
+
+canvas {
+  // width: 50% !important;
+}
+
+.nav-link {
+  color: black !important;
+}
+
+.nav-link.active {
+  color: white !important;
+}
+
+
+@media screen and (min-width: 400px) {
+  .canvas-container1 {
+    width: 100% !important;
+
+    canvas {
+      height: 200px !important;
+    }
+  }
+
+  .canvas-container2 {
+    width: 400px !important;
+    height: 400px !important;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .canvas-container1 {
+    width: 100% !important;
+
+    canvas {
+      height: 300px !important;
+    }
+  }
+
+  .canvas-container2 {
+    width: 450px !important;
+    height: 450px !important;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  .canvas-container1 {
+    width: 90% !important;
+
+    canvas {
+      height: 400px !important;
+    }
+  }
+
+  .canvas-container2 {
+    width: 400px !important;
+    height: 400px !important;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .canvas-container1 {
+    width: 90% !important;
+
+    canvas {
+      height: 400px !important;
+    }
+  }
+
+  .canvas-container2 {
+    width: 500px !important;
+    height: 500px !important;
+  }
+}

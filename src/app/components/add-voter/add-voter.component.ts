@@ -25,7 +25,7 @@ export class AddVoterComponent implements OnInit {
   
   constructor( private _AuthService:AuthService, private _VotersService:VotersService, private notifyService: NotificationService) {}
   getFingerprint(){
-    window.open('zk:');
+    window.open('get-fingerprint:');
   }
 
   getRegisterInfo(registerForm: FormGroup, formDirective: FormGroupDirective) {

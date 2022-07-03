@@ -103,7 +103,7 @@ export class AuthenticationComponent implements OnInit {
     this.getMatching();
   }
   LaunchURLScript() {
-    window.open('zk:');
+    window.open('get-matching:');
     this.stillInTime = true;
   }
 }

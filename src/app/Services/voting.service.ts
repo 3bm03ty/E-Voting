@@ -36,12 +36,14 @@ export class VotingService {
 
 
   vote(CID:any,VID:any):Observable<any>{
-    console.log(CID,VID);
-    
     return this._HttpClient.post(this.baseURL + 'votes',{
       "CID":CID,
       "VID":VID
     });
+  }
+
+  getElection():Observable<any>{
+    return this._HttpClient.get(this.baseURL + 'elections');
   }
   
 }

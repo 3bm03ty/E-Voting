@@ -25,6 +25,7 @@ export class CandidatesComponent implements OnInit {
   candidate: any;
   image1Src: any;
   image2Src: any;
+  numOfCandidates: any;
   constructor(
     private _AuthService: AuthService,
     private _Router: Router,
@@ -98,7 +99,7 @@ export class CandidatesComponent implements OnInit {
         .uploadCandidateExcel(this.file)
         .subscribe((event: any) => {
           console.log(event);
-          
+
           if (typeof event === 'object') {
             // Short link via api response
             this.shortLink = event.link;
@@ -121,61 +122,61 @@ export class CandidatesComponent implements OnInit {
         });
     }
   }
- 
 
   getRegisterInfo(addCandidateForm: any) {
     // console.log(addCandidateForm.value);
     console.log(this.candidateCPic.value.file);
     // console.log(this.candidateCLogo.value);
     this.inResponse = true;
-    this._CandidatesService.uploadCPic(this.candidateCPic.value.file).subscribe((response)=>{
-      console.log(response);
-      addCandidateForm.patchValue({
-        cpic: response.name,
-      });
-      this._CandidatesService.uploadCLogo(this.candidateCLogo.value.file).subscribe((response)=>{
+    this._CandidatesService
+      .uploadCPic(this.candidateCPic.value.file)
+      .subscribe((response) => {
         console.log(response);
-        this.addCandidateForm.patchValue({
-          clogo: response.name,
+        addCandidateForm.patchValue({
+          cpic: response.name,
         });
-        console.log(this.addCandidateForm.value);
-        if (addCandidateForm.status == 'VALID') {
-          console.log(addCandidateForm);
-          // $('#exampleModal1').modal('hide');
-          this._CandidatesService
-            .addCandidate(addCandidateForm.value)
-            .subscribe((response) => {
-              this.inResponse = false;
-              console.log(response);
-              if (response.success == true) {
-                this.addCandidateForm.reset();
-                this.template = '';
-                $('#exampleModal1').modal('hide');
-                Swal.fire({
-                  icon: 'success',
-                  title: 'Good job',
-                  text: 'Candidate added successfully',
-                });
-              } else {
-                Swal.fire({
-                  icon: 'error',
-                  title: 'Oops...',
-                  text: response.msg,
-                });
-              }
+        this._CandidatesService
+          .uploadCLogo(this.candidateCLogo.value.file)
+          .subscribe((response) => {
+            console.log(response);
+            this.addCandidateForm.patchValue({
+              clogo: response.name,
             });
-        } else {
-          if (this.template == '') {
-            this.submited = true;
-          } else {
-            this.submited = false;
-          }
-        }
-      })
-    })
-    
-    
-   
+            console.log(this.addCandidateForm.value);
+            if (addCandidateForm.status == 'VALID') {
+              console.log(addCandidateForm);
+              // $('#exampleModal1').modal('hide');
+              this._CandidatesService
+                .addCandidate(addCandidateForm.value)
+                .subscribe((response) => {
+                  this.inResponse = false;
+                  console.log(response);
+                  if (response.success == true) {
+                    this.addCandidateForm.reset();
+                    this.template = '';
+                    $('#exampleModal1').modal('hide');
+                    Swal.fire({
+                      icon: 'success',
+                      title: 'Good job',
+                      text: 'Candidate added successfully',
+                    });
+                  } else {
+                    Swal.fire({
+                      icon: 'error',
+                      title: 'Oops...',
+                      text: response.msg,
+                    });
+                  }
+                });
+            } else {
+              if (this.template == '') {
+                this.submited = true;
+              } else {
+                this.submited = false;
+              }
+            }
+          });
+      });
   }
 
   searchCandidate() {
@@ -327,7 +328,7 @@ export class CandidatesComponent implements OnInit {
         _id: this.candidate._id,
         ...editCandidateForm.value,
       });
-      
+
       this._CandidatesService
         .updateCandidate({
           _id: this.candidate._id,
@@ -399,5 +400,9 @@ export class CandidatesComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this._CandidatesService.getAllCandidates().subscribe((response) => {
+      this.numOfCandidates = response.candidate.length;
+    });
+  }
 }

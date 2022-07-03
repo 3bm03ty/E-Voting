@@ -1,4 +1,4 @@
-import { ChartsComponent } from './components/charts/charts.component';
+import { ReportsComponent } from './components/reports/reports.component';
 import { ResultsComponent } from './components/results/results.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -56,8 +56,8 @@ const routes: Routes = [
       },
       { path: 'candidates', component: CandidatesComponent },
       { path: 'voters', component: VotersComponent },
-      { path: 'results', component: ChartsComponent },
-      { path: 'charts', component: ChartsComponent },
+      { path: 'results', component: ResultsComponent },
+      { path: 'reports', component: ReportsComponent },
     ],
   },
   

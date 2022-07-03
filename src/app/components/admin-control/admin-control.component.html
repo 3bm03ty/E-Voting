@@ -83,15 +83,18 @@
   </div>
 </div> -->
 
-
-<section class="min-vh-100">
-  <div class="row m-0 ">
-    <div class="col-2 p-0 pb-3 min-vh-100 hhh text-center text-white position-fixed">
-
+<section *ngIf="isInElection && isInElection != null" class="min-vh-100">
+  <div class="row m-0">
+    <div
+      class="col-2 p-0 pb-3 min-vh-100 hhh text-center text-white position-fixed"
+    >
       <div class="routes text-start d-flex flex-column justify-content-between">
         <div>
           <div class="head p-1 py-2">
-            <h1 routerLink="/home"><i class="fas fa-fingerprint text-center"></i> <span>E-Voting</span></h1>
+            <h1 class="h" routerLink="/home">
+              <i class="fas fa-fingerprint text-center"></i>
+              <span>E-Voting</span>
+            </h1>
           </div>
           <!-- <div routerLink="overview" class="route-item pt-1">
             <h2 class="py-2"><i class="fa-solid fa-house-laptop"></i> Overview</h2>
@@ -107,45 +110,116 @@
           </div> -->
 
           <ul class="nav nav-pills text-start" id="pills-tab" role="tablist">
-            <li routerLink="overview" class="nav-item route-item" role="presentation">
-              <button class="nav-link active text-start" id="pills-home-tab" data-bs-toggle="pill" type="button"
-                role="tab" aria-controls="pills-home" aria-selected="true"><i class="fa-solid fa-house-laptop"></i>
-                <span>Overview</span></button>
+            <li
+              routerLink="overview"
+              class="nav-item route-item"
+              role="presentation"
+            >
+              <button
+                class="nav-link active text-start"
+                id="pills-home-tab"
+                data-bs-toggle="pill"
+                type="button"
+                role="tab"
+                aria-controls="pills-home"
+                aria-selected="true"
+              >
+                <i class="fa-solid fa-house-laptop"></i> <span>Overview</span>
+              </button>
             </li>
-            <li routerLink="settings" class="nav-item route-item" role="presentation">
-              <button class="nav-link text-start" id="pills-profile-tab" data-bs-toggle="pill" type="button" role="tab"
-                aria-controls="pills-profile" aria-selected="false"><i class="fa-solid fa-gear"></i> <span
-                  class="">Settings</span></button>
+            <hr class="" />
+            <li
+              routerLink="settings"
+              class="nav-item route-item"
+              role="presentation"
+            >
+              <button
+                class="nav-link text-start"
+                id="pills-profile-tab"
+                data-bs-toggle="pill"
+                type="button"
+                role="tab"
+                aria-controls="pills-profile"
+                aria-selected="false"
+              >
+                <i class="fa-solid fa-gear"></i> <span class="">Settings</span>
+              </button>
             </li>
-            <li routerLink="voters" class="nav-item route-item" role="presentation">
-              <button class="nav-link text-start" id="pills-contact-tab" data-bs-toggle="pill" type="button" role="tab"
-                aria-controls="pills-contact" aria-selected="false"><i class="fa-solid fa-person-booth"></i>
-                <span>Voters</span></button>
+            <hr class="" />
+            <li
+              routerLink="voters"
+              class="nav-item route-item"
+              role="presentation"
+            >
+              <button
+                class="nav-link text-start"
+                id="pills-contact-tab"
+                data-bs-toggle="pill"
+                type="button"
+                role="tab"
+                aria-controls="pills-contact"
+                aria-selected="false"
+              >
+                <i class="fa-solid fa-person-booth"></i> <span>Voters</span>
+              </button>
             </li>
-            <li routerLink="candidates" class="nav-item route-item" role="presentation">
-              <button class="nav-link text-start" id="pills-contact-tab" data-bs-toggle="pill" type="button" role="tab"
-                aria-controls="pills-contact" aria-selected="false"><i class="fa-solid fa-user-tie"></i>
+            <hr class="" />
+            <li
+              routerLink="candidates"
+              class="nav-item route-item"
+              role="presentation"
+            >
+              <button
+                class="nav-link text-start"
+                id="pills-contact-tab"
+                data-bs-toggle="pill"
+                type="button"
+                role="tab"
+                aria-controls="pills-contact"
+                aria-selected="false"
+              >
+                <i class="fa-solid fa-user-tie"></i>
                 <span>Candidates</span>
               </button>
             </li>
-            <li routerLink="results" class="nav-item route-item" role="presentation">
-              <button class="nav-link text-start" id="pills-contact-tab" data-bs-toggle="pill" type="button" role="tab"
-                aria-controls="pills-contact" aria-selected="false"><i class="fa-solid fa-square-poll-vertical"></i>
+            <hr class="" />
+            <li
+              routerLink="results"
+              class="nav-item route-item"
+              role="presentation"
+            >
+              <button
+                class="nav-link text-start"
+                id="pills-contact-tab"
+                data-bs-toggle="pill"
+                type="button"
+                role="tab"
+                aria-controls="pills-contact"
+                aria-selected="false"
+              >
+                <i class="fa-solid fa-square-poll-vertical"></i>
                 <span>Results</span>
               </button>
             </li>
+            <hr class="" />
+            <!-- <li routerLink="reports" class="nav-item route-item" role="presentation">
+              <button class="nav-link text-start" id="pills-contact-tab" data-bs-toggle="pill" type="button" role="tab"
+                aria-controls="pills-contact" aria-selected="false"><i class="fa-solid fa-chart-line"></i>
+                <span>Reports</span>
+              </button>
+            </li> -->
+            <hr class="" />
           </ul>
-          <hr class="">
         </div>
 
-        <div class="sidebar-info">
-          <ul class="list-unstyled info-list mb-0">
-            <!-- <li class="mb-3 ng-star-inserted">
+        <!-- <div class="sidebar-info">
+          <ul class="list-unstyled info-list mb-0"> -->
+        <!-- <li class="mb-3 ng-star-inserted">
               <div>
                 <span class="text-muted ml-1 text-decoration-none">2 Voters</span>
               </div>
             </li> -->
-            <li class="text-muted font-weight-bold"><i class="fa-solid fa-calendar-check"></i> Start Date</li>
+        <!-- <li class="text-muted font-weight-bold"><i class="fa-solid fa-calendar-check"></i> Start Date</li>
             <li class="mb-3 sidebar-start-date"><a class="text-white text-decoration-none"
                 routerLink="settings/dates">6/23/22, 1:00 PM</a></li>
             <li class="text-muted font-weight-bold"><i class="fa-solid fa-calendar-xmark"></i> End Date</li>
@@ -156,23 +230,139 @@
                 href="/election/258947/settings/dates">Africa/Cairo</a></li>
           </ul>
 
-        </div>
+        </div> -->
       </div>
-
     </div>
 
-
-    <div class="col-2 p-0 "></div>
+    <div class="col-2 p-0"></div>
 
     <div class="col-10 p-0">
-
       <div class="">
-        <div class="head-nav px-2 py-4 d-flex justify-content-between align-items-center w-100 ">
-          <div class="col-md-10 fw-bolder">Egyptian Presidential Election</div>
-          <div class="col-md-2 voters position-relative">118,958 Voters</div>
+        <div
+          class="head-nav px-2 py-4 d-flex justify-content-between align-items-center w-100"
+        >
+          <div class="col-md-10 fw-bolder">{{name}}</div>
+          <div
+            (click)="logout()"
+            class="col-md-2 logout position-relative d-flex align-items-center pointer"
+          >
+            Log Out <i class="fa-solid fa-arrow-right-from-bracket m-0"></i>
+          </div>
         </div>
         <router-outlet class=""></router-outlet>
       </div>
     </div>
   </div>
 </section>
+
+<section
+  *ngIf="!isInElection && isInElection != null"
+  class="min-vh-100 d-flex justify-content-center align-items-center"
+>
+  <div
+    class="head-nav px-5 py-4 d-flex justify-content-between align-items-center w-100 fixed-top"
+  >
+    <div class="col-md-10 fw-bolder">E-Voting</div>
+    <div
+      (click)="logout()"
+      class="col-md-2 logout position-relative d-flex align-items-center pointer"
+    >
+      Log Out <i class="fa-solid fa-arrow-right-from-bracket m-0"></i>
+    </div>
+  </div>
+
+  <div class="align-self-center text-center">
+    <h1>Welcome to your E-Voting System!</h1>
+    <p class="lead">Get started by creating your election.</p>
+    <a
+      class="btn btn-lg btn-success btn-attention p-0 px-2"
+      data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop"
+    >
+      <i class="fa-solid fa-plus"></i> <span class="">New Election</span>
+    </a>
+  </div>
+</section>
+
+<!-- Modal -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Create Election</h5>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body pt-0">
+        <div class="general-body pt-2">
+          <form [formGroup]="electionData" (ngSubmit)="createElection(electionData)"  class="ng-untouched ng-pristine ng-valid">
+            <div class="form-group">
+              <label for="name"
+                >Title<i class="danger-icon icon-attention ps-4"></i
+              ></label>
+              <input
+                class="form-control ng-untouched ng-pristine ng-valid"
+                formControlName="name"
+                type="text"
+              />
+            </div>
+
+            <div class="form-group">
+              <div class="row">
+                <div class="col-md-6">
+                  <label  for="start"
+                    >Start Date
+                    <i class="danger-icon icon-attention ps-4"></i>
+                  </label>
+                  <input
+                    class="form-control ng-untouched ng-pristine ng-valid"
+                    formControlName="start"
+                    type="date"
+                  />
+                </div>
+                <div class="col-md-6">
+                  <label for="end" 
+                    >End Date<i class="danger-icon icon-attention ps-4"></i
+                  ></label>
+                  <input 
+                    class="form-control ng-untouched ng-pristine ng-valid"
+                    formControlName="end"
+                    type="date"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <!-- <button
+              class="btn btn-success ladda-button mt-5"
+              type="submit"
+              data-style="zoom-in"
+            > -->
+            <!-- <span class="ladda-label">Save</span
+              ><span class="ladda-spinner"></span>
+            </button> -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                Cancel
+              </button>
+              <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</div>

@@ -113,7 +113,7 @@ export class FoundProfileComponent implements OnInit {
   }
 
   LaunchURLScript() {
-    window.open('zk:');
+    window.open('get-matching:');
   }
   ngOnInit(): void {
     this.voter = this._VotersService.voter;

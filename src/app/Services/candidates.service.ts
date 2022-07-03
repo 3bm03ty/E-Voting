@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class CandidatesService {
   baseURL = 'https://moproject.herokuapp.com/';
+  numOfCandidates:any;
 
   constructor(private _HttpClient: HttpClient) { }
   getAllCandidates(): Observable<any> {
@@ -18,6 +19,7 @@ export class CandidatesService {
     let response = this._HttpClient.get(this.baseURL + 'candidates/' + userId);
     return response;
   }
+  
 
   addCandidate(registerForm: any): Observable<any> {
     let response = this._HttpClient.post(

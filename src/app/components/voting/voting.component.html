@@ -1,28 +1,48 @@
 <section>
   <div class="container d-flex align-items-center">
     <div class="row ccc">
-      <div (click)="vote(candidate)" *ngFor="let candidate of candidates" class="col-md-6 elected-item1 my-3">
+      <div
+        (click)="vote(candidate)"
+        *ngFor="let candidate of candidates"
+        class="col-md-6 elected-item1 my-3"
+      >
         <div class="elected-item2 p-2 shadow-lg rounded-3">
           <div class="row m-0 justify-content-evenly align-items-center">
             <div class="text-center col-4 elected-img pe-1">
               <img
-                [src]="candidate.cpic? 'https://routeegypt.com/pinkboatIMG/uploads/'+candidate.cpic:'../../assets/imgs/person.png'"
-                class="rounded-circle" alt="" />
+                [src]="
+                  candidate.cpic
+                    ? 'https://routeegypt.com/pinkboatIMG/uploads/' +
+                      candidate.cpic
+                    : '../../assets/imgs/person.png'
+                "
+                class="rounded-circle"
+                alt=""
+              />
             </div>
             <div class="text-center col-4 elected-img pe-1">
               <img
-                [src]="candidate.clogo? 'https://routeegypt.com/pinkboatIMG/uploads/'+candidate.clogo:'../../assets/imgs/person.png'"
-                class="rounded-circle" alt="" />
+                [src]="
+                  candidate.clogo
+                    ? 'https://routeegypt.com/pinkboatIMG/uploads/' +
+                      candidate.clogo
+                    : '../../assets/imgs/person.png'
+                "
+                class="rounded-circle"
+                alt=""
+              />
             </div>
             <div class="col-12 pt-3">
-              <h5 class="text-center d-block">Name : {{candidate.fname + " " + candidate.pname}}</h5>
-              <h5 class="text-center d-block">Popular Name : {{candidate.nickName||""}}</h5>
+              <h5 class="text-center d-block">
+                Name : {{ candidate.fname + " " + candidate.pname }}
+              </h5>
+              <h5 class="text-center d-block">
+                Popular Name : {{ candidate.nickName || "" }}
+              </h5>
             </div>
           </div>
         </div>
       </div>
-
-
     </div>
   </div>
 </section>

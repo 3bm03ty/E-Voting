@@ -377,7 +377,7 @@ export class VotersComponent implements OnInit {
   }
 
   LaunchURLScript() {
-    window.open('addvoter:');
+    window.open('get-fingerprint:');
     setTimeout(() => {
       this.getTemplate();
     }, 5000);

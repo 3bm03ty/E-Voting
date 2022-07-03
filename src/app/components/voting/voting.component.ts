@@ -21,7 +21,7 @@ export class VotingComponent implements OnInit {
     private _Router: Router
   ) {
     if (this._VotersService.voter == null) {
-      // this._Router.navigate(['/search']);
+      this._Router.navigate(['/search']);
     }
   }
 
@@ -62,7 +62,7 @@ export class VotingComponent implements OnInit {
                 Swal.fire({
                   icon: 'error',
                   title: 'Oops...',
-                  text: "You have to authenticate yourself",
+                  text: "You can't vote twice",
                 }).then(() => {
                   this._Router.navigate(['/search']);
                   this._VotersService.voter = null;

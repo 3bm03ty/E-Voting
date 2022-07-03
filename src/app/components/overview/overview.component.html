@@ -1,7 +1,8 @@
 <div class="">
-  
   <div class="title shadow-sm">
-    <h4 class="p-2 px-4 bg-white py-2"><i class="fa-solid fa-house-laptop"></i> Overview</h4>
+    <h4 class="p-2 px-4 bg-white py-2">
+      <i class="fa-solid fa-house-laptop"></i> Overview
+    </h4>
   </div>
 
   <div class="container">
@@ -13,9 +14,7 @@
             Start Date
           </h5>
           <div class="card-body">
-
-            <h6 class="mb-0" id="startDate">June 3, 2022, 9:00:00 AM</h6>
-
+            <h6 class="mb-0" id="startDate">{{start}}</h6>
           </div>
         </div>
       </div>
@@ -26,9 +25,7 @@
             End Date
           </h5>
           <div class="card-body">
-
-            <h6 class="mb-0">June 6, 2022, 12:00:00 PM</h6>
-
+            <h6 class="mb-0">{{end}}</h6>
           </div>
         </div>
       </div>
@@ -38,9 +35,7 @@
             <div class="d-flex align-items-center justify-content-between">
               <i class="fa-solid fa-users"></i>
               <div class="ml-auto d-flex flex-column align-items-end">
-                <!---->
-                <h2 class="ng-star-inserted">118,958</h2>
-                <!---->
+                <h2 class="ng-star-inserted">118</h2>
                 <span>Voters</span>
               </div>
             </div>
@@ -52,9 +47,9 @@
           <div class="card-body">
             <div class="d-flex align-items-center justify-content-between">
               <i class="fa-solid fa-user-tie"></i>
-              <div class="ml-auto d-flex flex-column align-items-end ">
+              <div class="ml-auto d-flex flex-column align-items-end">
                 <!---->
-                <h2 class="ng-star-inserted">3</h2>
+                <h2 class="ng-star-inserted">{{ numOfCandidates || 0 }}</h2>
                 <!---->
                 <span>Candidates</span>
               </div>
@@ -69,7 +64,7 @@
               <i class="fa-solid fa-square-poll-vertical"></i>
               <div class="ml-auto d-flex flex-column align-items-end">
                 <!---->
-                <h2 class="ng-star-inserted">78,533</h2>
+                <h2 class="ng-star-inserted">{{ 123 || 0 }}</h2>
                 <!---->
                 <span>Votes</span>
               </div>

@@ -1,0 +1,38 @@
+path:hover{
+    fill: rgb(235, 211, 179) !important;
+}
+.Al_Iskandariyah{
+    fill: rgb(236, 128, 194) !important;
+}
+.Al_Iskandariyah:hover{
+    fill: rgb(235, 211, 179) !important;
+}
+
+text:hover path{
+    fill: rgb(235, 211, 179) !important;
+}
+
+path {
+    + text:hover + path{ 
+        fill: rgb(235, 211, 179) !important;
+    }
+}
+
+.Al_Iskandariyah.a{
+    fill: rgb(230, 179, 235) ;
+:hover{
+    fill: rgb(235, 211, 179) !important;
+
+}
+}
+
+.display{
+    background-color: rgba(0, 0, 0, 0.238);
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+}
